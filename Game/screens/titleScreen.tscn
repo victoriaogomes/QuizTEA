@@ -1,0 +1,146 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=1]
+[ext_resource path="res://sprites/images/cloud.png" type="Texture" id=2]
+[ext_resource path="res://sprites/images/sun.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/tree.png" type="Texture" id=4]
+[ext_resource path="res://sprites/images/grass.png" type="Texture" id=5]
+[ext_resource path="res://sprites/images/g1317.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/g1411.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/g1285.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/g1545.png" type="Texture" id=9]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=10]
+[ext_resource path="res://sprites/texts/QuizTEA.png" type="Texture" id=11]
+[ext_resource path="res://sprites/texts/Jogar.png" type="Texture" id=12]
+[ext_resource path="res://sprites/texts/Instruções.png" type="Texture" id=13]
+[ext_resource path="res://sprites/texts/Sobre.png" type="Texture" id=14]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 309.423, 476.442 )
+
+[node name="background" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.972549 )
+margin_left = -310.166
+margin_top = -477.0
+margin_right = 290.834
+margin_bottom = 545.0
+color = Color( 0.607843, 0.835294, 0.921569, 1 )
+
+[node name="paintedBackground" type="Sprite" parent="."]
+position = Vector2( -10.9062, 36.2285 )
+scale = Vector2( 1.48074, 0.995904 )
+texture = ExtResource( 1 )
+
+[node name="cloud1" type="Sprite" parent="."]
+position = Vector2( -209.414, -403.213 )
+scale = Vector2( 0.536772, 0.563665 )
+texture = ExtResource( 2 )
+
+[node name="cloud2" type="Sprite" parent="."]
+position = Vector2( 186.545, -311.266 )
+scale = Vector2( 0.515187, 0.540998 )
+texture = ExtResource( 2 )
+
+[node name="sun" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0.831373 )
+position = Vector2( -7.53664, -326.339 )
+scale = Vector2( 1.37338, 1.33897 )
+texture = ExtResource( 3 )
+
+[node name="tree" type="Sprite" parent="."]
+editor/display_folded = true
+position = Vector2( -3.16589, 291.956 )
+scale = Vector2( 0.248455, 0.313678 )
+texture = ExtResource( 4 )
+
+[node name="grass" type="Sprite" parent="tree"]
+position = Vector2( -554.398, 689.404 )
+scale = Vector2( 0.522194, 0.560541 )
+texture = ExtResource( 5 )
+
+[node name="grass2" type="Sprite" parent="tree"]
+position = Vector2( 498.104, 689.404 )
+scale = Vector2( 0.522194, 0.560541 )
+texture = ExtResource( 5 )
+
+[node name="kid" type="Sprite" parent="."]
+position = Vector2( -242.682, 454.15 )
+scale = Vector2( 0.229766, 0.22637 )
+texture = ExtResource( 6 )
+
+[node name="kid2" type="Sprite" parent="."]
+position = Vector2( -116.065, 401.706 )
+scale = Vector2( 0.232951, 0.214927 )
+texture = ExtResource( 7 )
+
+[node name="kid3" type="Sprite" parent="."]
+position = Vector2( 111.215, 461.448 )
+scale = Vector2( 0.208812, 0.213274 )
+texture = ExtResource( 8 )
+
+[node name="toy" type="Sprite" parent="."]
+position = Vector2( 219.438, 475.72 )
+scale = Vector2( 0.292319, 0.292319 )
+texture = ExtResource( 9 )
+
+[node name="gameTitle" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_left = -309.0
+margin_top = -212.0
+margin_right = 291.0
+margin_bottom = -129.0
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="Sprite" type="Sprite" parent="gameTitle"]
+self_modulate = Color( 1, 1, 1, 0.780392 )
+position = Vector2( 299.919, 41.9963 )
+scale = Vector2( 0.584906, 0.194809 )
+texture = ExtResource( 10 )
+
+[node name="QuizTEA" type="Sprite" parent="gameTitle"]
+position = Vector2( 305.122, 44.4457 )
+scale = Vector2( 0.433623, 0.433623 )
+texture = ExtResource( 11 )
+
+[node name="option1" type="ColorRect" parent="."]
+editor/display_folded = true
+margin_left = -309.0
+margin_top = -98.0
+margin_right = 291.0
+margin_bottom = -36.0
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="Sprite" type="Sprite" parent="option1"]
+self_modulate = Color( 1, 1, 1, 0.780392 )
+position = Vector2( 299.919, 31.4136 )
+scale = Vector2( 0.584906, 0.154089 )
+texture = ExtResource( 10 )
+
+[node name="QuizTEA" type="Sprite" parent="option1"]
+position = Vector2( 297.536, 30.5052 )
+scale = Vector2( 0.279817, 0.279817 )
+texture = ExtResource( 12 )
+
+[node name="option2" type="Sprite" parent="."]
+position = Vector2( -4.41595, 4.25684 )
+scale = Vector2( 0.269454, 0.269454 )
+texture = ExtResource( 13 )
+
+[node name="option3" type="ColorRect" parent="."]
+margin_left = -309.663
+margin_top = 43.972
+margin_right = 290.337
+margin_bottom = 105.972
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="Sprite" type="Sprite" parent="option3"]
+self_modulate = Color( 1, 1, 1, 0.780392 )
+position = Vector2( 299.919, 31.4136 )
+scale = Vector2( 0.584906, 0.154089 )
+texture = ExtResource( 10 )
+
+[node name="QuizTEA" type="Sprite" parent="option3"]
+position = Vector2( 298.415, 31.9371 )
+scale = Vector2( 0.264252, 0.264252 )
+texture = ExtResource( 14 )
+
