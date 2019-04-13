@@ -127,6 +127,7 @@ scale = Vector2( 0.269454, 0.269454 )
 texture = ExtResource( 13 )
 
 [node name="option3" type="ColorRect" parent="."]
+editor/display_folded = true
 margin_left = -309.663
 margin_top = 43.972
 margin_right = 290.337
