@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Ativo 3.png-a9dafe8b7b8456800bd0bdd83844dea4.stex"
+path="res://.import/flor.png-e348c4da3d4ce8e1dac0c0ce3500b2a0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/images/Ativo 3.png"
-dest_files=[ "res://.import/Ativo 3.png-a9dafe8b7b8456800bd0bdd83844dea4.stex" ]
+source_file="res://sprites/images/flor.png"
+dest_files=[ "res://.import/flor.png-e348c4da3d4ce8e1dac0c0ce3500b2a0.stex" ]
 
 [params]
 
