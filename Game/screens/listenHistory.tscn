@@ -1,0 +1,185 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://screens/listenHistory.gd" type="Script" id=1]
+[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
+[ext_resource path="res://sprites/texts/porquinhos.png" type="Texture" id=4]
+[ext_resource path="res://sprites/images/3Porquinhos/Ativo 15chao.png" type="Texture" id=5]
+[ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/Pause.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/Play.png" type="Texture" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "transition3"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("titlePorquinhos:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("bookPorquinhos:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("goBack:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("play:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("pause:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("iniciarJogo:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("paintedWhiteBackground:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("whiteBackground:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 309.055, 488.566 )
+script = ExtResource( 1 )
+
+[node name="Bluebackground" type="ColorRect" parent="."]
+margin_left = -311.0
+margin_top = -489.0
+margin_right = 293.0
+margin_bottom = 537.0
+color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
+
+[node name="paintedBlueBackground" type="Sprite" parent="."]
+position = Vector2( -9.79123, 25.1381 )
+scale = Vector2( 1.49729, 1.00117 )
+texture = ExtResource( 2 )
+
+[node name="whiteBackground" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -310.136
+margin_top = 397.85
+margin_right = 292.864
+margin_bottom = 456.85
+color = Color( 1, 1, 1, 0.619608 )
+
+[node name="paintedWhiteBackground" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -9.3877, 426.52 )
+scale = Vector2( 0.587956, 0.145847 )
+texture = ExtResource( 3 )
+
+[node name="titlePorquinhos" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 3.14191, -402.897 )
+scale = Vector2( 0.313496, 0.313496 )
+texture = ExtResource( 4 )
+
+[node name="bookPorquinhos" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -6.52271, -89.9786 )
+scale = Vector2( 0.287382, 0.287382 )
+texture = ExtResource( 5 )
+
+[node name="iniciarJogo" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -107.8, 403.092 )
+scale = Vector2( 0.258323, 0.258323 )
+normal = ExtResource( 6 )
+
+[node name="goBack" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -174.442, 200.978 )
+scale = Vector2( 0.589353, 0.589353 )
+normal = ExtResource( 7 )
+
+[node name="pause" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 82.9891, 200.638 )
+scale = Vector2( 0.587783, 0.587783 )
+normal = ExtResource( 8 )
+
+[node name="play" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -61.1548, 178.832 )
+scale = Vector2( 0.557348, 0.557348 )
+normal = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/transition3 = SubResource( 1 )
+
+[connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciarJogo_pressed"]
+[connection signal="pressed" from="goBack" to="." method="_on_goBack_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_play_pressed"]

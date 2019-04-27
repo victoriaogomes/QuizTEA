@@ -5,7 +5,6 @@ func _ready():
 
 
 func _on_play_pressed():
-	print("cliquei")
 	$option1/play.set_shape_visible(false)
 	$instructions.set_shape_visible(false)
 	$option3/about.set_shape_visible(false)
