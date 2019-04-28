@@ -24,21 +24,25 @@ func _ready():
 func _on_next_pressed():
 	if(givenAnswer == correctAnswer):
 		global_config.increment_level()
+		$check1.set_visible(false)
+		$check2.set_visible(false)
 		if(global_config.finish !=1):
-			$check1.set_visible(false)
-			$check2.set_visible(false)
 			_set_options()
 	elif(givenAnswer == 3):
-		pass #Mandar selecionar uma opção correta
+		pass #Mandar selecionar uma opção
 	else:
-		pass
+		$check1.set_visible(false)
+		$check2.set_visible(false)
+		#sugerir que a história seja ouvida novamente
 
 func _set_options():
 	correctAnswer = randi()%2
 	givenAnswer = 3
-	pos = randi()%14
-	while(pos == global_config.level):
-		pos = randi()%14
+	if(global_config.level<12):
+		# Sortear um número entre (level+1) e 13:
+		pos = (randi()%(13-(global_config.level+1))) + (global_config.level+1)
+	else:
+		pos = randi()%12
 	match(correctAnswer):
 		0: 
 			$option1.set_texture(vector[global_config.level])
@@ -46,7 +50,6 @@ func _set_options():
 		1:
 			$option1.set_texture(vector[pos])
 			$option2.set_texture(vector[global_config.level])
-
 
 func _on_select1_pressed():
 	$check1.set_visible(true)
