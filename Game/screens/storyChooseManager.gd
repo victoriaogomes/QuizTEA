@@ -10,18 +10,21 @@ func _ready():
 func _on_tresPorquinhos_pressed():
 	_set_buttons_invisible()
 	global_config.storychosen = 1
+#warning-ignore:return_value_discarded
 	get_tree().change_scene_to(next_scene)
 
 
 func _on_chapeuzinhoVermelho_pressed():
 	_set_buttons_invisible()
 	global_config.storychosen = 2
+#warning-ignore:return_value_discarded
 	get_tree().change_scene_to(next_scene)
 
 
 func _on_pequenaSereia_pressed():
 	_set_buttons_invisible()
 	global_config.storychosen = 3
+#warning-ignore:return_value_discarded
 	get_tree().change_scene_to(next_scene)
 
 

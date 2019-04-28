@@ -4,6 +4,8 @@ var vector
 var correctAnswer
 var givenAnswer
 var pos
+var win_scene = preload("res://screens/winScreen.tscn")
+
 
 func _ready():
 	if(global_config.storychosen==1):
@@ -28,12 +30,16 @@ func _on_next_pressed():
 		$check2.set_visible(false)
 		if(global_config.finish !=1):
 			_set_options()
+		else:
+		#warning-ignore:return_value_discarded
+			get_tree().change_scene_to(win_scene)
 	elif(givenAnswer == 3):
 		pass #Mandar selecionar uma opção
 	else:
 		$check1.set_visible(false)
 		$check2.set_visible(false)
 		#sugerir que a história seja ouvida novamente
+
 
 func _set_options():
 	correctAnswer = randi()%2
@@ -50,6 +56,7 @@ func _set_options():
 		1:
 			$option1.set_texture(vector[pos])
 			$option2.set_texture(vector[global_config.level])
+
 
 func _on_select1_pressed():
 	$check1.set_visible(true)
