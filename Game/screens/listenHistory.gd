@@ -1,17 +1,14 @@
 extends Node2D
 
+var next_scene = preload("res://screens/game.tscn")
 
 func _ready():
 	get_node("/root/Node2D/AnimationPlayer").play("transition3", -1, 1.0, false)
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 
 func _on_iniciarJogo_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to(next_scene)
 
 
 func _on_goBack_pressed():

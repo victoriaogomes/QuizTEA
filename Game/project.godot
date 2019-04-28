@@ -19,6 +19,10 @@ config/name="QuizTEA"
 run/main_scene="res://screens/titleScreen.tscn"
 config/icon="res://sprites/images/kidReading.png"
 
+[autoload]
+
+global_config="*res://screens/global_config.gd"
+
 [display]
 
 window/size/width=600
