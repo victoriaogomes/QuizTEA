@@ -182,7 +182,7 @@ tracks/14/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -309, -98 ), Vector2( 294.355, -98 ) ]
+"values": [ Vector2( 249.122, -251.791 ), Vector2( 719.541, -251.791 ) ]
 }
 tracks/15/type = "value"
 tracks/15/path = NodePath("../option3:rect_position")
@@ -194,7 +194,7 @@ tracks/15/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -309.663, 43.972 ), Vector2( -912.666, 43.972 ) ]
+"values": [ Vector2( 249.122, -129.204 ), Vector2( 719.541, -129.204 ) ]
 }
 tracks/16/type = "value"
 tracks/16/path = NodePath("../option1:self_modulate")
@@ -243,5 +243,101 @@ tracks/19/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0.780392 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("../cloud4:self_modulate")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("../cloud3:self_modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("../tree/grass3:self_modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("../tree/grass4:self_modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("../cloud1:position")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -209.101, -407.09 ), Vector2( -90.204, -407.091 ) ]
+}
+tracks/25/type = "value"
+tracks/25/path = NodePath("../cloud4:position")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 136.147, -323.543 ), Vector2( 255.053, -323.543 ) ]
+}
+tracks/26/type = "value"
+tracks/26/path = NodePath("../cloud2:position")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 308.875, -423.701 ), Vector2( 427.781, -423.701 ) ]
+}
+tracks/27/type = "value"
+tracks/27/path = NodePath("../cloud3:position")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 648.013, -345.514 ), Vector2( 766.919, -345.514 ) ]
 }
 

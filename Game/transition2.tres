@@ -13,7 +13,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -921.28, -211.504 ), Vector2( -315, -211.504 ) ]
+"values": [ Vector2( 717.822, -251.791 ), Vector2( 249.122, -251.791 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("option2:rect_position")
@@ -25,7 +25,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 292.462, -75.2179 ), Vector2( -315, -75.2179 ) ]
+"values": [ Vector2( 716.831, -129.204 ), Vector2( 249.122, -129.204 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("option1:self_modulate")
@@ -160,7 +160,7 @@ tracks/12/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("window:self_modulate")
+tracks/13/path = NodePath("floor:self_modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -172,12 +172,24 @@ tracks/13/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("floor:self_modulate")
+tracks/14/path = NodePath("floor2:self_modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
 tracks/14/enabled = true
 tracks/14/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("floor3:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,

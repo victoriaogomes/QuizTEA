@@ -11,6 +11,8 @@ func _ready():
 
 
 func _on_tresPorquinhos_pressed():
+	get_node("/root/Node2D/AnimationPlayer").play_backwards("transition2", -1)
+	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 	_set_buttons_invisible()
 	global_config.storychosen = 1
 #warning-ignore:return_value_discarded

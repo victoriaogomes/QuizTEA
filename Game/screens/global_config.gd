@@ -3,6 +3,7 @@ extends Node
 var level
 var storychosen
 var finish
+var zoomPic
 
 #Storychosen = 1: 3 porquinhos - vai do level 0 ao 13
 
