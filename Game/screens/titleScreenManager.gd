@@ -1,7 +1,11 @@
 extends Node2D
 
+var storyChose_scene = load("res://screens/storyChoose.tscn")
+
+
 func _ready():
-	pass # Replace with function body.
+	get_tree().set_quit_on_go_back(true)
+	get_tree().set_auto_accept_quit(true)
 
 
 func _on_play_pressed():
@@ -10,9 +14,8 @@ func _on_play_pressed():
 	$option3/about.set_shape_visible(false)
 	get_node("/root/Node2D/AnimationPlayer").play("transition", -1, 1.0, false)
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
-	$storySelectScene.set_visible(true)
-	get_node("/root/Node2D/storySelectScene/AnimationPlayer").play("transition2", -1, 1.0, false)
-	yield(get_node("/root/Node2D/storySelectScene/AnimationPlayer"), "animation_finished")
+#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(storyChose_scene)
 
 
 func _on_instructions_pressed():

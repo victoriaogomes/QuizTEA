@@ -8,6 +8,8 @@ var win_scene = preload("res://screens/winScreen.tscn")
 
 
 func _ready():
+	get_tree().set_auto_accept_quit(false)
+	get_tree().set_quit_on_go_back(false)
 	if(global_config.storychosen==1):
 		vector = [preload("res://sprites/images/3Porquinhos/Parte1.png"), preload("res://sprites/images/3Porquinhos/Parte2.png"),
 		preload("res://sprites/images/3Porquinhos/Parte3.png"), preload("res://sprites/images/3Porquinhos/Parte4.png"),
@@ -24,6 +26,7 @@ func _ready():
 
 
 func _on_next_pressed():
+	print("uhu")
 	if(givenAnswer == correctAnswer):
 		global_config.increment_level()
 		$check1.set_visible(false)
@@ -51,11 +54,11 @@ func _set_options():
 		pos = randi()%12
 	match(correctAnswer):
 		0: 
-			$option1.set_texture(vector[global_config.level])
-			$option2.set_texture(vector[pos])
+			$option3/option1.set_texture(vector[global_config.level])
+			$option4/option2.set_texture(vector[pos])
 		1:
-			$option1.set_texture(vector[pos])
-			$option2.set_texture(vector[global_config.level])
+			$option3/option1.set_texture(vector[pos])
+			$option4/option2.set_texture(vector[global_config.level])
 
 
 func _on_select1_pressed():
@@ -68,3 +71,14 @@ func _on_select2_pressed():
 	$check1.set_visible(false)
 	$check2.set_visible(true)
 	givenAnswer = 1
+
+func _on_option1_pressed():
+	pass # Replace with function body.
+
+
+func _on_option2_pressed():
+	pass # Replace with function body.
+
+
+func _on_zoomButton1_pressed():
+	print("oi")

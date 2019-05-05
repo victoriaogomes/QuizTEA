@@ -4,7 +4,10 @@ var next_scene = preload("res://screens/listenHistory.tscn")
 
 
 func _ready():
-	pass # Replace with function body.
+	get_tree().set_auto_accept_quit(false)
+	get_tree().set_quit_on_go_back(false)
+	get_node("/root/Node2D/AnimationPlayer").play("transition2", -1, 1.0, false)
+	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 
 
 func _on_tresPorquinhos_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://screens/titleScreenManager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -15,8 +15,7 @@
 [ext_resource path="res://sprites/texts/Jogar.png" type="Texture" id=13]
 [ext_resource path="res://sprites/texts/instructions.png" type="Texture" id=14]
 [ext_resource path="res://sprites/texts/Sobre.png" type="Texture" id=15]
-[ext_resource path="res://screens/storyChoose.tscn" type="PackedScene" id=16]
-[ext_resource path="res://transition.tres" type="Animation" id=17]
+[ext_resource path="res://transition.tres" type="Animation" id=16]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 309.423, 476.442 )
@@ -133,13 +132,9 @@ position = Vector2( 240.475, 7.64996 )
 scale = Vector2( 0.264, 0.264 )
 normal = ExtResource( 15 )
 
-[node name="storySelectScene" parent="." instance=ExtResource( 16 )]
-visible = false
-position = Vector2( 4.52576, 24.3854 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("")
-anims/transition = ExtResource( 17 )
+anims/transition = ExtResource( 16 )
 
 [connection signal="pressed" from="option1/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="instructions" to="." method="_on_instructions_pressed"]

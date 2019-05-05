@@ -1,13 +1,15 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://screens/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
 [ext_resource path="res://sprites/texts/gameQuestion.png" type="Texture" id=3]
-[ext_resource path="res://sprites/images/square.png" type="Texture" id=4]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte1.png" type="Texture" id=5]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte12.png" type="Texture" id=6]
-[ext_resource path="res://sprites/texts/Proximo.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/images/shadow.png" type="Texture" id=5]
+[ext_resource path="res://sprites/images/pin.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte3.png" type="Texture" id=7]
 [ext_resource path="res://sprites/images/check.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/button.png" type="Texture" id=9]
+[ext_resource path="res://sprites/texts/Proximo.png" type="Texture" id=10]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 311.46, 479.467 )
@@ -21,7 +23,7 @@ margin_bottom = 547.0
 color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
 
 [node name="paintedBlueBackground" type="Sprite" parent="."]
-position = Vector2( -11.3052, 38.4374 )
+position = Vector2( -11.3052, 39.2519 )
 scale = Vector2( 1.49935, 0.995904 )
 texture = ExtResource( 2 )
 
@@ -30,30 +32,92 @@ position = Vector2( -12.1847, -428.606 )
 scale = Vector2( 0.243885, 0.243885 )
 texture = ExtResource( 3 )
 
-[node name="select1" type="TouchScreenButton" parent="."]
-position = Vector2( -267.759, -225.003 )
-scale = Vector2( 0.638631, 0.638631 )
+[node name="option3" type="TouchScreenButton" parent="."]
+editor/display_folded = true
+position = Vector2( -138.132, -393.542 )
+rotation = 0.174533
+scale = Vector2( 0.277, 0.277 )
 normal = ExtResource( 4 )
 
-[node name="select2" type="TouchScreenButton" parent="."]
-position = Vector2( -268.128, 237.415 )
-scale = Vector2( 0.638631, 0.638631 )
+[node name="Sprite3" type="Sprite" parent="option3"]
+position = Vector2( 654.15, 723.417 )
+rotation = 1.83382e-008
+scale = Vector2( 3.25029, 3.23119 )
+texture = ExtResource( 5 )
+
+[node name="option4" type="TouchScreenButton" parent="option3"]
+position = Vector2( -291.259, 243.245 )
+rotation = -0.349066
+scale = Vector2( 1, 1 )
 normal = ExtResource( 4 )
 
-[node name="option1" type="TouchScreenButton" parent="."]
-position = Vector2( -182.415, -377.868 )
-scale = Vector2( 0.371742, 0.371742 )
-normal = ExtResource( 5 )
+[node name="Sprite4" type="Sprite" parent="option3"]
+position = Vector2( 573.753, 701.034 )
+rotation = -0.349066
+scale = Vector2( 3.26979, 3.23923 )
+texture = ExtResource( 5 )
 
-[node name="option2" type="TouchScreenButton" parent="."]
-position = Vector2( -182.415, 57.4545 )
-scale = Vector2( 0.371742, 0.371742 )
-normal = ExtResource( 6 )
+[node name="option1" type="TouchScreenButton" parent="option3"]
+position = Vector2( -161.96, 150.969 )
+rotation = -0.174533
+normal = ExtResource( 4 )
 
-[node name="next" type="TouchScreenButton" parent="."]
-position = Vector2( -69.2485, 488.39 )
-scale = Vector2( 0.2531, 0.2531 )
+[node name="Sprite5" type="Sprite" parent="option3"]
+self_modulate = Color( 1, 1, 1, 0.894118 )
+position = Vector2( 611.298, 748.86 )
+rotation = -0.174533
+scale = Vector2( 3.22975, 3.25229 )
+texture = ExtResource( 5 )
+
+[node name="pin" type="Sprite" parent="option3"]
+position = Vector2( 425.496, 32.4277 )
+rotation = -0.174533
+scale = Vector2( 2.38831, 2.38831 )
+texture = ExtResource( 6 )
+
+[node name="option4" type="TouchScreenButton" parent="."]
+editor/display_folded = true
+position = Vector2( -133.973, 54.5907 )
+rotation = 0.174533
+scale = Vector2( 0.277, 0.277 )
+normal = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="option4"]
+position = Vector2( 654.15, 723.417 )
+rotation = 1.83382e-008
+scale = Vector2( 3.25029, 3.23119 )
+texture = ExtResource( 5 )
+
+[node name="option4" type="TouchScreenButton" parent="option4"]
+position = Vector2( -291.259, 243.245 )
+rotation = -0.349066
+scale = Vector2( 1, 1 )
+normal = ExtResource( 4 )
+
+[node name="Sprite4" type="Sprite" parent="option4"]
+position = Vector2( 573.753, 701.034 )
+rotation = -0.349066
+scale = Vector2( 3.26979, 3.23923 )
+texture = ExtResource( 5 )
+
+[node name="option2" type="TouchScreenButton" parent="option4"]
+position = Vector2( -164.802, 150.242 )
+rotation = -0.174533
+scale = Vector2( 0.999605, 0.999605 )
 normal = ExtResource( 7 )
+
+[node name="Sprite5" type="Sprite" parent="option4"]
+self_modulate = Color( 1, 1, 1, 0.894118 )
+position = Vector2( 611.298, 748.86 )
+rotation = -0.174533
+scale = Vector2( 3.22975, 3.25229 )
+texture = ExtResource( 5 )
+
+[node name="pin" type="Sprite" parent="option4"]
+position = Vector2( 443.432, 33.3257 )
+rotation = -0.174533
+scale = Vector2( 2.38831, 2.38831 )
+texture = ExtResource( 6 )
 
 [node name="check1" type="Sprite" parent="."]
 visible = false
@@ -67,6 +131,30 @@ position = Vector2( -233.827, 268.746 )
 scale = Vector2( 0.198953, 0.198953 )
 texture = ExtResource( 8 )
 
-[connection signal="pressed" from="select1" to="." method="_on_select1_pressed"]
-[connection signal="pressed" from="select2" to="." method="_on_select2_pressed"]
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -114.874
+margin_top = 497.574
+margin_right = 91.126
+margin_bottom = 534.574
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="button" type="Sprite" parent="."]
+position = Vector2( -12.2538, 517.63 )
+scale = Vector2( 0.605298, 0.605298 )
+texture = ExtResource( 9 )
+
+[node name="next" type="TouchScreenButton" parent="."]
+position = Vector2( -80.9749, 498.518 )
+scale = Vector2( 0.21503, 0.21503 )
+normal = ExtResource( 10 )
+
+[node name="zoomButton1" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -176.505, -38.152 )
+scale = Vector2( 0.907438, 0.570842 )
+normal = ExtResource( 9 )
+
+[connection signal="pressed" from="option3/option1" to="." method="_on_option1_pressed"]
+[connection signal="pressed" from="option4/option2" to="." method="_on_option2_pressed"]
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="zoomButton1" to="." method="_on_zoomButton1_pressed"]
