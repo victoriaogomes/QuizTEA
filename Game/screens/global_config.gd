@@ -4,6 +4,7 @@ var level
 var storychosen
 var finish
 var zoomPic
+var initiatingGame
 
 #Storychosen = 1: 3 porquinhos - vai do level 0 ao 13
 
@@ -11,6 +12,7 @@ var zoomPic
 func _ready():
 	level = 0
 	finish = 0
+	initiatingGame = 0
 
 func increment_level():
 	level = level+1

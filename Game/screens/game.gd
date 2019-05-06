@@ -67,21 +67,21 @@ func _set_options():
 
 
 func _zoomScreenAnimation(var type):
-	if(!$optionsAnimation.is_visible_in_tree()):
-		if(type == 0):
-			$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
-			$optionsAnimation.set_visible(true)
-			$polaroid3/polaroid1.set_shape_visible(false)
-			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option1", -1, 1.0, false)
-			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
-			global_config.zoomPic = 0
-		else:
-			$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
-			$optionsAnimation.set_visible(true)
-			$polaroid3/polaroid1.set_shape_visible(false)
-			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option2", -1, 1.0, false)
-			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
-			global_config.zoomPic = 1
+	# if(!$optionsAnimation.is_visible_in_tree()):
+	if(type == 0):
+		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
+		$optionsAnimation.set_visible(true)
+		$polaroid3/polaroid1.set_shape_visible(false)
+		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option1", -1, 1.0, false)
+		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+		global_config.zoomPic = 0
+	else:
+		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
+		$optionsAnimation.set_visible(true)
+		$polaroid3/polaroid1.set_shape_visible(false)
+		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option2", -1, 1.0, false)
+		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+		global_config.zoomPic = 1
 
 
 func _on_half1_1_pressed():

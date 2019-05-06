@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://screens/titleScreenManager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -16,6 +16,63 @@
 [ext_resource path="res://sprites/texts/instructions.png" type="Texture" id=14]
 [ext_resource path="res://sprites/texts/Sobre.png" type="Texture" id=15]
 [ext_resource path="res://transition.tres" type="Animation" id=16]
+[ext_resource path="res://sprites/images/logo.png" type="Texture" id=17]
+
+[sub_resource type="Animation" id=1]
+resource_name = "logoAnimation"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect/Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "logoLeaving"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("../ColorRect/Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../ColorRect:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 309.423, 476.442 )
@@ -156,7 +213,20 @@ normal = ExtResource( 15 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("")
+anims/logoAnimation = SubResource( 1 )
+anims/logoLeaving = SubResource( 2 )
 anims/transition = ExtResource( 16 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -309.0
+margin_top = -476.0
+margin_right = 715.0
+margin_bottom = 124.0
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 512.879, 282.267 )
+scale = Vector2( 0.15527, 0.15527 )
+texture = ExtResource( 17 )
 
 [connection signal="pressed" from="option1/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="instructions" to="." method="_on_instructions_pressed"]

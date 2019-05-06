@@ -6,6 +6,12 @@ var storyChose_scene = load("res://screens/storyChoose.tscn")
 func _ready():
 	get_tree().set_quit_on_go_back(true)
 	get_tree().set_auto_accept_quit(true)
+	if(global_config.initiatingGame == 0 ):
+		get_node("/root/Node2D/AnimationPlayer").play("logoAnimation", -1, 1.0, false)
+		yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
+		get_node("/root/Node2D/AnimationPlayer").play("logoLeaving", -1, 1.0, false)
+		yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
+		global_config.initiatingGame = 1
 
 
 func _on_play_pressed():
