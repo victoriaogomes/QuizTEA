@@ -2,7 +2,7 @@ extends Node2D
 
 var vector
 var correctAnswer
-var givenAnswer
+var givenAnswer = 3
 var pos
 var win_scene = preload("res://screens/winScreen.tscn")
 #Essas variáveis armazenam o valor "1" caso estejam pressionados e "0" caso não estejam pressionados
@@ -30,22 +30,21 @@ func _ready():
 	_set_options()
 
 
-func _on_next_pressed():
-	print("uhu")
+func next():
 	if(givenAnswer == correctAnswer):
 		global_config.increment_level()
-		$check1.set_visible(false)
-		$check2.set_visible(false)
 		if(global_config.finish !=1):
 			_set_options()
 		else:
 		#warning-ignore:return_value_discarded
 			get_tree().change_scene_to(win_scene)
-	elif(givenAnswer == 3):
-		pass #Mandar selecionar uma opção
 	else:
-		$check1.set_visible(false)
-		$check2.set_visible(false)
+		if(givenAnswer == 0):
+			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option1", -1)
+			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+		else:
+			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option2", -1)
+			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		#sugerir que a história seja ouvida novamente
 
 
@@ -67,7 +66,11 @@ func _set_options():
 
 
 func _zoomScreenAnimation(var type):
-	# if(!$optionsAnimation.is_visible_in_tree()):
+	#Faz com que não seja possível clicar nos botões:
+	get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(true)
+	get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(true)
+	get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(true)
+	get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(true)
 	if(type == 0):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
@@ -78,7 +81,7 @@ func _zoomScreenAnimation(var type):
 	else:
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
-		$polaroid3/polaroid1.set_shape_visible(false)
+		$polaroid3_2/polaroid1.set_shape_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		global_config.zoomPic = 1
@@ -86,57 +89,45 @@ func _zoomScreenAnimation(var type):
 
 func _on_half1_1_pressed():
 	button1_1 = 1
-	print("apertei 1_1")
 	_verifyButtonsOption0()
-func _on_half1_1_released():
-	button1_1 = 0
-	print("soltei 1_1")
 
 
 func _on_half1_2_pressed():
 	button1_2 = 1
-	print("apertei 1_2")
 	_verifyButtonsOption0()
-func _on_half1_2_released():
-	button1_2 = 0
-	print("soltei 1_2")
 
 
 func _on_half2_1_pressed():
 	button2_1 = 1
-	print("apertei 2_1")
 	_verifyButtonsOption1()
-func _on_half2_1_released():
-	button2_1 = 0
-	print("soltei 2_1")
 
 
 func _on_half2_2_pressed():
 	button2_2 = 1
 	_verifyButtonsOption1()
-	print("apertei 2_2")
-func _on_half2_2_released():
-	button2_2 = 0
-	print("soltei 2_2")
 
 
 func _verifyButtonsOption0():
-	print("toaquiii")
+	yield(get_tree().create_timer(0.2), "timeout")
 	if(button1_1 == 1 and button1_2 == 1):
-		print("entrei aqui no resposta")
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
 		$polaroid3/polaroid1.set_shape_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option1", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 0
-		_set_options()
+		next()
 	else:
-		print("entrei aqui no zoom")
+		$pauseScreen/close.set_block_signals(true)
+		$pause.set_block_signals(true)
+		$optionsAnimation/close.set_block_signals(false)
 		_zoomScreenAnimation(0)
+	button1_1 = 0
+	button1_2 = 0
 
 
 func _verifyButtonsOption1():
+	yield(get_tree().create_timer(0.2), "timeout")
 	if(button2_1 == 1 and button2_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
@@ -144,6 +135,19 @@ func _verifyButtonsOption1():
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 1
-		_set_options()
+		next()
 	else:
+		$pauseScreen/close.set_block_signals(true)
+		$pause.set_block_signals(true)
+		$optionsAnimation/close.set_block_signals(false)
 		_zoomScreenAnimation(1)
+	button2_1 = 0
+	button2_2 = 0
+
+func _on_pause_pressed():
+	$pauseScreen/close.set_block_signals(false)
+	$pause.set_block_signals(true)
+	$optionsAnimation/close.set_block_signals(true)
+	$pauseScreen.set_visible(true)
+	$pauseScreen/AnimationPlayer.play_backwards("Pausemenu", -1)
+	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")

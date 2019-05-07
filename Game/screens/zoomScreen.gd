@@ -15,3 +15,10 @@ func _on_close_pressed():
 	else:
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("zoom_in_Option2", -1)
 	yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+	#Faz com que seja possível clicar nos botões:
+	get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(false)
+	get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(false)
+	get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(false)
+	get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(false)
+	get_node("/root/Node2D/optionsAnimation").set_visible(false)
+	get_node("/root/Node2D/pause").set_block_signals(false)

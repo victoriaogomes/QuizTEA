@@ -1,0 +1,340 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://screens/pause.gd" type="Script" id=1]
+[ext_resource path="res://sprites/images/close.png" type="Texture" id=2]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
+[ext_resource path="res://sprites/texts/MenuInicial.png" type="Texture" id=4]
+[ext_resource path="res://sprites/texts/Reiniciar.png" type="Texture" id=5]
+[ext_resource path="res://sprites/texts/Sair.png" type="Texture" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Pausemenu"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("menuInicialButton:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -29.9286, -318.33 ), Vector2( -485.657, -318.33 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("menuInicialButton:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("menuInicialButton/Sprite:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 225.824, 31.2888 ), Vector2( 225.824, 31.2888 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("menuInicialButton/Sprite:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("menuInicialButton/MenuInicial:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 118.353, 6.80191 ), Vector2( 118.353, 6.80191 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("menuInicialButton/MenuInicial:self_modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("reiniciarButton:rect_position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -29.9286, -233.986 ), Vector2( 424.439, -233.986 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("reiniciarButton:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("reiniciarButton/Sprite:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 225.824, 31.2888 ), Vector2( 225.824, 31.2888 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("reiniciarButton/Sprite:self_modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("reiniciarButton/Reiniciar:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 144.201, 8.16229 ), Vector2( 144.201, 8.16229 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("reiniciarButton/Reiniciar:self_modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("sairButton:rect_position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -29.9286, -148.282 ), Vector2( -432.602, -148.282 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("sairButton:self_modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("sairButton/Sprite:position")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 225.824, 31.2888 ), Vector2( 225.824, 31.2888 ) ]
+}
+tracks/15/type = "value"
+tracks/15/path = NodePath("sairButton/Sprite:self_modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/16/type = "value"
+tracks/16/path = NodePath("sairButton/sair:position")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 186.373, 16.3246 ), Vector2( 186.373, 16.3246 ) ]
+}
+tracks/17/type = "value"
+tracks/17/path = NodePath("sairButton/sair:self_modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/18/type = "value"
+tracks/18/path = NodePath("ColorRect:self_modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("close:self_modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 311.46, 479.467 )
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -315.0
+margin_top = -480.226
+margin_right = 713.0
+margin_bottom = 121.774
+color = Color( 0.00392157, 0, 0, 0.882353 )
+
+[node name="close" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 641.001, -466.567 )
+scale = Vector2( 0.376, 0.376 )
+normal = ExtResource( 2 )
+
+[node name="menuInicialButton" type="ColorRect" parent="."]
+editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -485.657
+margin_top = -318.33
+margin_right = -33.657
+margin_bottom = -256.33
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="Sprite" type="Sprite" parent="menuInicialButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 225.824, 31.2888 )
+scale = Vector2( 0.445, 0.154 )
+texture = ExtResource( 3 )
+
+[node name="MenuInicial" type="TouchScreenButton" parent="menuInicialButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 118.353, 6.80191 )
+scale = Vector2( 0.248, 0.248 )
+normal = ExtResource( 4 )
+
+[node name="reiniciarButton" type="ColorRect" parent="."]
+editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 424.439
+margin_top = -233.986
+margin_right = 876.439
+margin_bottom = -171.986
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="Sprite" type="Sprite" parent="reiniciarButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 225.824, 31.2888 )
+scale = Vector2( 0.445, 0.154 )
+texture = ExtResource( 3 )
+
+[node name="Reiniciar" type="TouchScreenButton" parent="reiniciarButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 144.201, 8.16229 )
+scale = Vector2( 0.248, 0.248 )
+normal = ExtResource( 5 )
+
+[node name="sairButton" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -432.602
+margin_top = -148.282
+margin_right = 19.398
+margin_bottom = -86.2818
+color = Color( 1, 1, 1, 0.478431 )
+
+[node name="Sprite" type="Sprite" parent="sairButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 225.824, 31.2888 )
+scale = Vector2( 0.445, 0.154 )
+texture = ExtResource( 3 )
+
+[node name="sair" type="TouchScreenButton" parent="sairButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 186.373, 16.3246 )
+scale = Vector2( 0.248, 0.248 )
+normal = ExtResource( 6 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Pausemenu = SubResource( 1 )
+
+[connection signal="pressed" from="close" to="." method="_on_close_pressed"]
+[connection signal="pressed" from="menuInicialButton/MenuInicial" to="." method="_on_menuInicial_pressed"]
+[connection signal="pressed" from="reiniciarButton/Reiniciar" to="." method="_on_jogarNovamente_pressed"]
+[connection signal="pressed" from="sairButton/sair" to="." method="_on_sair_pressed"]

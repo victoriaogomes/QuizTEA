@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://screens/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -8,10 +8,9 @@
 [ext_resource path="res://sprites/images/button.png" type="Texture" id=6]
 [ext_resource path="res://sprites/images/pin.png" type="Texture" id=7]
 [ext_resource path="res://sprites/images/3Porquinhos/Parte3.png" type="Texture" id=8]
-[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=9]
-[ext_resource path="res://sprites/texts/Proximo.png" type="Texture" id=10]
-[ext_resource path="res://sprites/images/pause2.png" type="Texture" id=11]
-[ext_resource path="res://screens/optionsAnimation.tscn" type="PackedScene" id=12]
+[ext_resource path="res://sprites/images/pause2.png" type="Texture" id=9]
+[ext_resource path="res://screens/optionsAnimation.tscn" type="PackedScene" id=10]
+[ext_resource path="res://screens/pause.tscn" type="PackedScene" id=11]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 311.46, 479.467 )
@@ -149,43 +148,24 @@ scale = Vector2( 3.52277, 8.94336 )
 normal = ExtResource( 6 )
 passby_press = true
 
-[node name="ColorRect" type="ColorRect" parent="."]
-editor/display_folded = true
-visible = false
-margin_left = 78.0
-margin_top = 57.0
-margin_right = 352.0
-margin_bottom = 105.0
-color = Color( 1, 1, 1, 0.478431 )
-
-[node name="whiteBackground" type="Sprite" parent="ColorRect"]
-position = Vector2( 137.099, 24.3118 )
-scale = Vector2( 0.267752, 0.120281 )
-texture = ExtResource( 9 )
-
-[node name="next" type="TouchScreenButton" parent="ColorRect"]
-position = Vector2( 73.6825, 5.10083 )
-scale = Vector2( 0.21503, 0.21503 )
-normal = ExtResource( 10 )
-
 [node name="pause" type="TouchScreenButton" parent="."]
 position = Vector2( 641.001, -466.567 )
 scale = Vector2( 0.375921, 0.375921 )
-normal = ExtResource( 11 )
+normal = ExtResource( 9 )
 
-[node name="optionsAnimation" parent="." instance=ExtResource( 12 )]
+[node name="optionsAnimation" parent="." instance=ExtResource( 10 )]
 visible = false
 position = Vector2( -0.00775146, -0.0838013 )
 rotation = 1.49012e-008
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
+[node name="pauseScreen" parent="." instance=ExtResource( 11 )]
+visible = false
+position = Vector2( -0.008, -0.084 )
+
 [connection signal="pressed" from="polaroid3/half1_1" to="." method="_on_half1_1_pressed"]
-[connection signal="released" from="polaroid3/half1_1" to="." method="_on_half1_1_released"]
 [connection signal="pressed" from="polaroid3/half1_2" to="." method="_on_half1_2_pressed"]
-[connection signal="released" from="polaroid3/half1_2" to="." method="_on_half1_2_released"]
 [connection signal="pressed" from="polaroid3_2/half2_1" to="." method="_on_half2_1_pressed"]
-[connection signal="released" from="polaroid3_2/half2_1" to="." method="_on_half2_1_released"]
 [connection signal="pressed" from="polaroid3_2/half2_2" to="." method="_on_half2_2_pressed"]
-[connection signal="released" from="polaroid3_2/half2_2" to="." method="_on_half2_2_released"]
-[connection signal="pressed" from="ColorRect/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]

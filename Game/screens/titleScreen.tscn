@@ -20,7 +20,7 @@
 
 [sub_resource type="Animation" id=1]
 resource_name = "logoAnimation"
-length = 2.0
+length = 0.8
 tracks/0/type = "value"
 tracks/0/path = NodePath("../ColorRect/Sprite:self_modulate")
 tracks/0/interp = 1
@@ -28,7 +28,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
@@ -40,7 +40,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ) ]
@@ -218,12 +218,14 @@ anims/logoLeaving = SubResource( 2 )
 anims/transition = ExtResource( 16 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 margin_left = -309.0
 margin_top = -476.0
 margin_right = 715.0
 margin_bottom = 124.0
 
 [node name="Sprite" type="Sprite" parent="ColorRect"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 512.879, 282.267 )
 scale = Vector2( 0.15527, 0.15527 )
 texture = ExtResource( 17 )
