@@ -137,7 +137,7 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("../option3/about:self_modulate")
+tracks/11/path = NodePath("../option3/creditos:self_modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
