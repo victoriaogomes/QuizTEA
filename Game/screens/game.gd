@@ -46,6 +46,16 @@ func next():
 			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option2", -1)
 			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		#sugerir que a história seja ouvida novamente
+		#Faz com que não seja possível clicar nos botões:
+		get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(true)
+		get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(true)
+		get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(true)
+		get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(true)
+		$wrongAnswer.set_visible(true)
+		$wrongAnswer/opt1/ouvirAgain.set_block_signals(false)
+		$wrongAnswer/opt2/keepPlaying.set_block_signals(false)
+		get_node("/root/Node2D/wrongAnswer/AnimationPlayer").play("openUp", -1, 1.0, false)
+		yield(get_node("/root/Node2D/wrongAnswer/AnimationPlayer"), "animation_finished")
 
 
 func _set_options():
@@ -127,7 +137,7 @@ func _verifyButtonsOption0():
 
 
 func _verifyButtonsOption1():
-	yield(get_tree().create_timer(0.2), "timeout")
+	yield(get_tree().create_timer(0.3), "timeout")
 	if(button2_1 == 1 and button2_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
@@ -143,6 +153,7 @@ func _verifyButtonsOption1():
 		_zoomScreenAnimation(1)
 	button2_1 = 0
 	button2_2 = 0
+
 
 func _on_pause_pressed():
 	$pauseScreen/close.set_block_signals(false)

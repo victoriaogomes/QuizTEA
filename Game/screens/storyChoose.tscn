@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://screens/storyChooseManager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://sprites/texts/chapeuzinho.png" type="Texture" id=10]
 [ext_resource path="res://sprites/images/lamp.png" type="Texture" id=11]
 [ext_resource path="res://transition2.tres" type="Animation" id=12]
+[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=13]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 313.527, 500.437 )
@@ -120,6 +121,13 @@ texture = ExtResource( 11 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/transition2 = ExtResource( 12 )
 
+[node name="voltar" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 428.034, -24.0825 )
+scale = Vector2( 0.229481, 0.229481 )
+normal = ExtResource( 13 )
+
 [connection signal="pressed" from="option1/tresPorquinhos" to="." method="_on_tresPorquinhos_pressed"]
 [connection signal="pressed" from="option2/pequenaSereia" to="." method="_on_pequenaSereia_pressed"]
 [connection signal="pressed" from="chapeuzinhoVermelho" to="." method="_on_chapeuzinhoVermelho_pressed"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

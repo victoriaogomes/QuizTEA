@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://screens/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://sprites/images/pause2.png" type="Texture" id=9]
 [ext_resource path="res://screens/optionsAnimation.tscn" type="PackedScene" id=10]
 [ext_resource path="res://screens/pause.tscn" type="PackedScene" id=11]
+[ext_resource path="res://screens/wrongAnswerPopUp.tscn" type="PackedScene" id=12]
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 311.46, 479.467 )
@@ -73,14 +74,14 @@ texture = ExtResource( 5 )
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -170.154, 145.601 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 9.67321 )
+scale = Vector2( 3.52277, 9.43682 )
 normal = ExtResource( 6 )
 
 [node name="half1_2" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -48.5358, 839.242 )
+position = Vector2( -46.2268, 852.337 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 8.94336 )
+scale = Vector2( 3.52277, 8.76607 )
 normal = ExtResource( 6 )
 passby_press = true
 
@@ -91,7 +92,6 @@ scale = Vector2( 2.38831, 2.38831 )
 texture = ExtResource( 7 )
 
 [node name="polaroid3_2" type="TouchScreenButton" parent="."]
-editor/display_folded = true
 position = Vector2( 324.144, -400.987 )
 rotation = 0.174533
 scale = Vector2( 0.277, 0.277 )
@@ -137,14 +137,14 @@ texture = ExtResource( 7 )
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -165.199, 155.118 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 9.67321 )
+scale = Vector2( 3.52277, 9.49592 )
 normal = ExtResource( 6 )
 
 [node name="half2_2" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -46.9137, 835.236 )
+position = Vector2( -43.8351, 852.696 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 8.94336 )
+scale = Vector2( 3.52277, 8.70697 )
 normal = ExtResource( 6 )
 passby_press = true
 
@@ -163,6 +163,10 @@ rotation = 1.49012e-008
 [node name="pauseScreen" parent="." instance=ExtResource( 11 )]
 visible = false
 position = Vector2( -0.008, -0.084 )
+
+[node name="wrongAnswer" parent="." instance=ExtResource( 12 )]
+visible = false
+position = Vector2( 0.931427, 0.516083 )
 
 [connection signal="pressed" from="polaroid3/half1_1" to="." method="_on_half1_1_pressed"]
 [connection signal="pressed" from="polaroid3/half1_2" to="." method="_on_half1_2_pressed"]

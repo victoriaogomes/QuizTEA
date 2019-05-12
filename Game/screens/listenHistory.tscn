@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://screens/listenHistory.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
 [ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
 [ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=4]
-[ext_resource path="res://sprites/texts/porquinhos.png" type="Texture" id=5]
-[ext_resource path="res://sprites/images/3Porquinhos/Ativo 15chao.png" type="Texture" id=6]
-[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=7]
-[ext_resource path="res://sprites/images/Pause.png" type="Texture" id=8]
-[ext_resource path="res://sprites/images/Play.png" type="Texture" id=9]
+[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=5]
+[ext_resource path="res://sprites/texts/porquinhos.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/3Porquinhos/Ativo 15chao.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/Pause.png" type="Texture" id=9]
+[ext_resource path="res://sprites/images/Play.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=1]
 resource_name = "transition3"
@@ -109,6 +110,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/8/type = "value"
+tracks/8/path = NodePath("voltar:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 309.055, 488.566 )
@@ -127,51 +140,66 @@ scale = Vector2( 2.54202, 0.588689 )
 texture = ExtResource( 2 )
 
 [node name="whiteBackground" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 249.122
-margin_top = -95.8001
+margin_top = -137.972
 margin_right = 701.121
-margin_bottom = -33.8001
+margin_bottom = -75.972
 color = Color( 1, 1, 1, 0.619608 )
 
 [node name="paintedWhiteBackground" type="Sprite" parent="whiteBackground"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 226.921, 30.7208 )
 scale = Vector2( 0.440932, 0.158247 )
 texture = ExtResource( 3 )
 
 [node name="iniciarJogo" type="TouchScreenButton" parent="."]
-position = Vector2( 372.801, -88.2969 )
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 372.801, -130.469 )
 scale = Vector2( 0.258323, 0.258323 )
 normal = ExtResource( 4 )
 
+[node name="voltar" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 602.706, -478.727 )
+scale = Vector2( 0.211087, 0.211087 )
+normal = ExtResource( 5 )
+
 [node name="titlePorquinhos" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -8.21246, -427.405 )
 scale = Vector2( 0.360504, 0.360504 )
-texture = ExtResource( 5 )
-
-[node name="bookPorquinhos" type="Sprite" parent="."]
-position = Vector2( -16.1973, -134.129 )
-scale = Vector2( 0.315308, 0.315308 )
 texture = ExtResource( 6 )
 
-[node name="goBack" type="TouchScreenButton" parent="."]
-position = Vector2( 309.497, -241.751 )
-scale = Vector2( 0.589353, 0.589353 )
-normal = ExtResource( 7 )
+[node name="bookPorquinhos" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -16.1973, -134.129 )
+scale = Vector2( 0.315308, 0.315308 )
+texture = ExtResource( 7 )
 
-[node name="pause" type="TouchScreenButton" parent="."]
-position = Vector2( 566.928, -242.091 )
-scale = Vector2( 0.587783, 0.587783 )
+[node name="goBack" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 309.497, -283.923 )
+scale = Vector2( 0.589353, 0.589353 )
 normal = ExtResource( 8 )
 
-[node name="play" type="TouchScreenButton" parent="."]
-position = Vector2( 422.784, -263.897 )
-scale = Vector2( 0.557348, 0.557348 )
+[node name="pause" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 566.928, -284.263 )
+scale = Vector2( 0.587783, 0.587783 )
 normal = ExtResource( 9 )
+
+[node name="play" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 422.784, -306.069 )
+scale = Vector2( 0.557348, 0.557348 )
+normal = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/transition3 = SubResource( 1 )
 
 [connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciarJogo_pressed"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="goBack" to="." method="_on_goBack_pressed"]
 [connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
 [connection signal="pressed" from="play" to="." method="_on_play_pressed"]

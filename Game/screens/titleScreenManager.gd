@@ -13,6 +13,8 @@ func _ready():
 		get_node("/root/Node2D/AnimationPlayer").play("logoLeaving", -1, 1.0, false)
 		yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 		global_config.initiatingGame = 1
+	get_node("/root/Node2D/AnimationPlayer").play_backwards("transition", -1)
+	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 
 
 func _on_play_pressed():

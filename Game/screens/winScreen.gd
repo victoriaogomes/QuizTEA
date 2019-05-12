@@ -26,7 +26,7 @@ func _on_sair_pressed():
 
 
 func _changeScene(scene):
-	get_node("/root/Node2D/AnimationPlayer").play("leaving_winScene", -1, 1.0, false)
+	get_node("/root/Node2D/AnimationPlayer").play_backwards("transition_winscene", -1)
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 #warning-ignore:return_value_discarded
 	get_tree().change_scene_to(scene)

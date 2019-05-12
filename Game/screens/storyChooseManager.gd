@@ -1,6 +1,7 @@
 extends Node2D
 
 var next_scene = preload("res://screens/listenHistory.tscn")
+var previous_scene = load("res://screens/titleScreen.tscn")
 
 
 func _ready():
@@ -37,3 +38,9 @@ func _set_buttons_invisible():
 	$option1/tresPorquinhos.set_shape_visible(false)
 	$option2/pequenaSereia.set_shape_visible(false)
 	$chapeuzinhoVermelho.set_shape_visible(false)
+
+func _on_voltar_pressed():
+	get_node("/root/Node2D/AnimationPlayer").play_backwards("transition2", -1)
+	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
+#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(previous_scene)
