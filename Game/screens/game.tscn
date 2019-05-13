@@ -72,16 +72,16 @@ texture = ExtResource( 5 )
 
 [node name="half1_1" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -170.154, 145.601 )
+position = Vector2( -167.444, 160.97 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 9.43682 )
+scale = Vector2( 3.52277, 9.22874 )
 normal = ExtResource( 6 )
 
 [node name="half1_2" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -46.2268, 852.337 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 8.76607 )
+scale = Vector2( 3.52277, 8.62453 )
 normal = ExtResource( 6 )
 passby_press = true
 
@@ -135,16 +135,16 @@ texture = ExtResource( 7 )
 
 [node name="half2_1" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -165.199, 155.118 )
+position = Vector2( -163.817, 162.958 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 9.49592 )
+scale = Vector2( 3.52277, 9.38977 )
 normal = ExtResource( 6 )
 
 [node name="half2_2" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -43.8351, 852.696 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 8.70697 )
+scale = Vector2( 3.52277, 8.56544 )
 normal = ExtResource( 6 )
 passby_press = true
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/GoForward.png-e4c901700d2518cdeb4a613b5ef14156.stex"
+path="res://.import/goForward.png-15413648784fa455c2f03011b04533a6.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/images/GoForward.png"
-dest_files=[ "res://.import/GoForward.png-e4c901700d2518cdeb4a613b5ef14156.stex" ]
+source_file="res://sprites/images/goForward.png"
+dest_files=[ "res://.import/goForward.png-15413648784fa455c2f03011b04533a6.stex" ]
 
 [params]
 

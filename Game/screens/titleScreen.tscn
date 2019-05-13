@@ -457,7 +457,6 @@ anims/logoLeaving = SubResource( 3 )
 anims/transition = ExtResource( 16 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-editor/display_folded = true
 margin_left = -309.0
 margin_top = -476.0
 margin_right = 715.0

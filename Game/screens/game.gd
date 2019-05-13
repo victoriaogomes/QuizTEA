@@ -118,7 +118,7 @@ func _on_half2_2_pressed():
 
 
 func _verifyButtonsOption0():
-	yield(get_tree().create_timer(0.2), "timeout")
+	yield(get_tree().create_timer(0.3), "timeout")
 	if(button1_1 == 1 and button1_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)

@@ -261,7 +261,7 @@ margin_left = -315.0
 margin_top = -480.226
 margin_right = 713.0
 margin_bottom = 121.774
-color = Color( 0.00392157, 0, 0, 0.882353 )
+color = Color( 0.00392157, 0, 0, 0.905882 )
 
 [node name="close" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
