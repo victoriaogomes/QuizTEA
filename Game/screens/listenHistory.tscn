@@ -1206,14 +1206,14 @@ script = ExtResource( 1 )
 
 [node name="Bluebackground" type="ColorRect" parent="."]
 margin_left = -524.0
-margin_top = -311.0
+margin_top = -314.0
 margin_right = 501.0
 margin_bottom = 288.0
 color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
 
 [node name="paintedBlueBackground" type="Sprite" parent="."]
-position = Vector2( -12.3316, -11.3406 )
-scale = Vector2( 2.54707, 0.587653 )
+position = Vector2( -12.3316, -13.3212 )
+scale = Vector2( 2.54707, 0.591241 )
 texture = ExtResource( 2 )
 
 [node name="whiteBackground" type="ColorRect" parent="."]
