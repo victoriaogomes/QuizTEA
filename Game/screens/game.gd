@@ -47,10 +47,11 @@ func next():
 			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		#sugerir que a história seja ouvida novamente
 		#Faz com que não seja possível clicar nos botões:
-		get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(true)
-		get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(true)
-		get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(true)
-		get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(true)
+		$polaroid3/half1_1.set_block_signals(true)
+		$polaroid3/half1_2.set_block_signals(true)
+		$polaroid3_2/half2_1.set_block_signals(true)
+		$polaroid3_2/half2_2.set_block_signals(true)
+		$pause.set_block_signals(true)
 		$wrongAnswer.set_visible(true)
 		$wrongAnswer/opt1/ouvirAgain.set_block_signals(false)
 		$wrongAnswer/opt2/keepPlaying.set_block_signals(false)
@@ -66,6 +67,7 @@ func _set_options():
 		pos = (randi()%(13-(global_config.level+1))) + (global_config.level+1)
 	else:
 		pos = randi()%12
+	print("Tamo no level " + str(global_config.level) + "agora")
 	match(correctAnswer):
 		0: 
 			$polaroid3/polaroid1.set_texture(vector[global_config.level])
@@ -104,7 +106,8 @@ func _on_half1_1_pressed():
 
 func _on_half1_2_pressed():
 	button1_2 = 1
-	_verifyButtonsOption0()
+	if(button1_1 != 1):
+		_verifyButtonsOption0()
 
 
 func _on_half2_1_pressed():
@@ -114,11 +117,12 @@ func _on_half2_1_pressed():
 
 func _on_half2_2_pressed():
 	button2_2 = 1
-	_verifyButtonsOption1()
+	if(button2_1 != 1):
+		_verifyButtonsOption1()
 
 
 func _verifyButtonsOption0():
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
 	if(button1_1 == 1 and button1_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
@@ -126,6 +130,7 @@ func _verifyButtonsOption0():
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option1", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 0
+		print("Chamando next em option0")
 		next()
 	else:
 		$pauseScreen/close.set_block_signals(true)
@@ -137,7 +142,7 @@ func _verifyButtonsOption0():
 
 
 func _verifyButtonsOption1():
-	yield(get_tree().create_timer(0.3), "timeout")
+	yield(get_tree().create_timer(0.2), "timeout")
 	if(button2_1 == 1 and button2_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
@@ -145,6 +150,7 @@ func _verifyButtonsOption1():
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 1
+		print("Chamando next em option1")
 		next()
 	else:
 		$pauseScreen/close.set_block_signals(true)

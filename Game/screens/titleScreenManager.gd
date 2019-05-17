@@ -1,6 +1,7 @@
 extends Node2D
 
 var storyChose_scene = load("res://screens/storyChoose.tscn")
+var instruction_scene = load("res://screens/instructions.tscn")
 
 
 func _ready():
@@ -30,7 +31,10 @@ func _on_play_pressed():
 
 
 func _on_instructions_pressed():
-	pass # Replace with function body.
+	get_node("/root/Node2D/AnimationPlayer").play("transition", -1, 1.0, false)
+	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
+	#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(instruction_scene)
 
 
 func _on_creditos_pressed():

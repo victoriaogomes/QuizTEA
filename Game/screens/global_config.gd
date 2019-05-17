@@ -3,16 +3,18 @@ extends Node
 var level
 var storychosen
 var finish
+#warning-ignore:unused_class_variable
 var zoomPic
 var initiatingGame
 
-#Storychosen = 1: 3 porquinhos - vai do level 0 ao 13
 
-# Called when the node enters the scene tree for the first time.
+#Storychosen = 1: 3 porquinhos - level 0 ao 13
+
 func _ready():
 	level = 0
 	finish = 0
 	initiatingGame = 0
+
 
 func increment_level():
 	level = level+1
@@ -25,5 +27,3 @@ func increment_level():
 	else:
 		if(level == 11):
 			finish = 1
-
-

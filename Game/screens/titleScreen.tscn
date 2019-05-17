@@ -430,6 +430,7 @@ scale = Vector2( 0.269, 0.269 )
 normal = ExtResource( 14 )
 
 [node name="option3" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 719.541
 margin_top = -129.204
@@ -457,6 +458,7 @@ anims/logoLeaving = SubResource( 3 )
 anims/transition = ExtResource( 16 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+editor/display_folded = true
 margin_left = -309.0
 margin_top = -476.0
 margin_right = 715.0
@@ -482,6 +484,7 @@ scale = Vector2( 0.12217, 0.12217 )
 texture = ExtResource( 17 )
 
 [node name="goBack" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 380.0
 margin_top = 8.0

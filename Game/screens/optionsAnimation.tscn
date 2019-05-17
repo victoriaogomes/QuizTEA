@@ -55,6 +55,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath("TouchScreenButton:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.277, 0.277 ), Vector2( 0.277, 0.277 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "answer_Option2"
@@ -94,6 +106,18 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("TouchScreenButton:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.277, 0.277 ), Vector2( 0.277, 0.277 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -245,9 +269,8 @@ anims/zoom_in_Option1 = SubResource( 3 )
 anims/zoom_in_Option2 = SubResource( 4 )
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -234.685, -0.290527 )
-scale = Vector2( 0.394105, 0.394105 )
+position = Vector2( 271.961, -367.929 )
+scale = Vector2( 0.277, 0.277 )
 normal = ExtResource( 3 )
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
