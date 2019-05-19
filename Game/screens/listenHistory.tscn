@@ -6,7 +6,7 @@
 [ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=4]
 [ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=5]
 [ext_resource path="res://sprites/texts/porquinhos.png" type="Texture" id=6]
-[ext_resource path="res://sprites/images/3Porquinhos/Ativo 15chao.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/3Porquinhos/livro_porquinhos.png" type="Texture" id=7]
 [ext_resource path="res://screens/musicPlayer.gd" type="Script" id=8]
 [ext_resource path="res://sprites/images/goBack.png" type="Texture" id=9]
 [ext_resource path="res://sprites/images/play.png" type="Texture" id=10]
@@ -18,7 +18,7 @@
 resource_name = "transition3"
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("titlePorquinhos:self_modulate")
+tracks/0/path = NodePath("title:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("bookPorquinhos:self_modulate")
+tracks/1/path = NodePath("book:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -1242,13 +1242,13 @@ position = Vector2( 387.909, -300.865 )
 scale = Vector2( 0.211087, 0.211087 )
 normal = ExtResource( 5 )
 
-[node name="titlePorquinhos" type="Sprite" parent="."]
+[node name="title" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -239.334, -261.787 )
 scale = Vector2( 0.360504, 0.360504 )
 texture = ExtResource( 6 )
 
-[node name="bookPorquinhos" type="Sprite" parent="."]
+[node name="book" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -218.908, -2.2298 )
 scale = Vector2( 0.265515, 0.265515 )
@@ -1266,6 +1266,7 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 anims/transition3 = SubResource( 1 )
 
 [node name="history" type="AudioStreamPlayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="goBack" type="TouchScreenButton" parent="history"]

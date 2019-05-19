@@ -15,18 +15,25 @@ var button2_2 = 0
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
-	if(global_config.storychosen==1):
-		vector = [preload("res://sprites/images/3Porquinhos/Parte1.png"), preload("res://sprites/images/3Porquinhos/Parte2.png"),
-		preload("res://sprites/images/3Porquinhos/Parte3.png"), preload("res://sprites/images/3Porquinhos/Parte4.png"),
-		preload("res://sprites/images/3Porquinhos/Parte5.png"), preload("res://sprites/images/3Porquinhos/Parte6.png"),
-		preload("res://sprites/images/3Porquinhos/Parte7.png"), preload("res://sprites/images/3Porquinhos/Parte8.png"),
-		preload("res://sprites/images/3Porquinhos/Parte9.png"), preload("res://sprites/images/3Porquinhos/Parte10.png"),
-		preload("res://sprites/images/3Porquinhos/Parte11.png"), preload("res://sprites/images/3Porquinhos/Parte12.png"),
-		preload("res://sprites/images/3Porquinhos/Parte13.png"), preload("res://sprites/images/3Porquinhos/Parte14.png")]
-	elif(global_config.storychosen==2):
-		pass
-	else:
-		pass
+	match(global_config.storychosen):
+		1:
+			vector = [preload("res://sprites/images/3Porquinhos/Parte1.png"), preload("res://sprites/images/3Porquinhos/Parte2.png"),
+			preload("res://sprites/images/3Porquinhos/Parte3.png"), preload("res://sprites/images/3Porquinhos/Parte4.png"),
+			preload("res://sprites/images/3Porquinhos/Parte5.png"), preload("res://sprites/images/3Porquinhos/Parte6.png"),
+			preload("res://sprites/images/3Porquinhos/Parte7.png"), preload("res://sprites/images/3Porquinhos/Parte8.png"),
+			preload("res://sprites/images/3Porquinhos/Parte9.png"), preload("res://sprites/images/3Porquinhos/Parte10.png"),
+			preload("res://sprites/images/3Porquinhos/Parte11.png"), preload("res://sprites/images/3Porquinhos/Parte12.png"),
+			preload("res://sprites/images/3Porquinhos/Parte13.png"), preload("res://sprites/images/3Porquinhos/Parte14.png")]
+		2:
+			vector = [preload("res://sprites/images/ChapeuzinhoVermelho/Parte1.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte2.png"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte3.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte4.png"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte5.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte6.png"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte7.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte8.png"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte9.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte10.png"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte11.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte12.png"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte13.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte14.png")]
+		3:
+			pass
 	_set_options()
 
 

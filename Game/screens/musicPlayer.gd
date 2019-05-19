@@ -6,18 +6,25 @@ var increment
 var pos = 0
 var seg
 var cena = 1
-var listened_once = 1
+var listened_once = 0
 
 
 func _ready():
 	#warning-ignore:return_value_discarded
 	$Timer.connect("timeout", self, "on_TimeOut")
-	increment = float(284)/float(157)
 	set_process(true)
 	# history.volume_db = -20
-	self.stream = load("res://sound/3porquinhos.ogg")
 	#17 até 301: total de 284 pixels
-	#História dos 3 porquinhos: aprx 157s
+	match(global_config.storychosen):
+		1:
+			self.stream = load("res://sound/3porquinhos.ogg")
+			increment = float(284)/float(99.85)
+		2:
+			self.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
+			increment = float(284)/float(117.47)
+		3:
+			self.stream = load("res://sound/PequenaSereia.ogg")
+			increment = float(284)/float(99.50)
 
 
 #warning-ignore:unused_argument

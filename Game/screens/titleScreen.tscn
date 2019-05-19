@@ -295,6 +295,7 @@ tracks/1/keys = {
 }
 
 [node name="Node2D" type="Node2D"]
+editor/display_folded = true
 position = Vector2( 309.423, 476.442 )
 script = ExtResource( 1 )
 
