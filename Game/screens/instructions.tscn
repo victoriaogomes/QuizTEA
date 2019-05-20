@@ -19,7 +19,6 @@
 [ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=17]
 [ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=18]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 26
 outline_color = Color( 0, 0, 0, 1 )
@@ -440,14 +439,14 @@ custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "- Ao escolher “Jogar\", você será levado a essa tela."
 
 [node name="next" type="TouchScreenButton" parent="."]
-position = Vector2( 505.265, 62.1056 )
-scale = Vector2( 1.23923, 1.23923 )
+position = Vector2( 584.655, -183.416 )
+scale = Vector2( 2.04115, 2.04115 )
 normal = ExtResource( 6 )
 
 [node name="previous" type="TouchScreenButton" parent="."]
 visible = false
-position = Vector2( -178.948, 61.0529 )
-scale = Vector2( 1.23923, 1.23923 )
+position = Vector2( -290.918, -183.416 )
+scale = Vector2( 2.041, 2.041 )
 normal = ExtResource( 7 )
 
 [node name="arrow" type="Sprite" parent="."]
@@ -497,12 +496,12 @@ scale = Vector2( 0.531748, 0.531748 )
 texture = ExtResource( 16 )
 
 [node name="back" type="TouchScreenButton" parent="."]
-position = Vector2( 595.016, -489.753 )
-scale = Vector2( 0.230529, 0.230529 )
+position = Vector2( 577.024, -498.345 )
+scale = Vector2( 0.283832, 0.283832 )
 normal = ExtResource( 17 )
 
 [node name="Popup" type="Popup" parent="."]
-visible = true
+editor/display_folded = true
 margin_left = -318.0
 margin_top = -505.0
 margin_right = 715.0

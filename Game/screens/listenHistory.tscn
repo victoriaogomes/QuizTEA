@@ -78,7 +78,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("whiteBackground/paintedWhiteBackground:self_modulate")
+tracks/5/path = NodePath("whiteBackground:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -90,7 +90,7 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("whiteBackground:self_modulate")
+tracks/6/path = NodePath("voltar:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -102,7 +102,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("voltar:self_modulate")
+tracks/7/path = NodePath("ColorRect5:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -114,7 +114,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("ColorRect5:self_modulate")
+tracks/8/path = NodePath("history/goForward:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -126,7 +126,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("history/goForward:self_modulate")
+tracks/9/path = NodePath("history/playerBlank:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -138,7 +138,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("history/playerBlank:self_modulate")
+tracks/10/path = NodePath("history/playerExibition:self_modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -150,7 +150,7 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("history/playerExibition:self_modulate")
+tracks/11/path = NodePath("history/timePassing:self_modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -162,7 +162,7 @@ tracks/11/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("history/timePassing:self_modulate")
+tracks/12/path = NodePath("history/backTimingPassing:self_modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -174,7 +174,7 @@ tracks/12/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("history/backTimingPassing:self_modulate")
+tracks/13/path = NodePath("iniciarJogo2:self_modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -1224,13 +1224,13 @@ margin_right = 470.811
 margin_bottom = 45.12
 color = Color( 1, 1, 1, 0.619608 )
 
-[node name="paintedWhiteBackground" type="Sprite" parent="whiteBackground"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 226.921, 30.7208 )
-scale = Vector2( 0.440932, 0.158247 )
-texture = ExtResource( 3 )
-
 [node name="iniciarJogo" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0.410604, -29.3181 )
+scale = Vector2( 0.441447, 0.168712 )
+normal = ExtResource( 3 )
+
+[node name="iniciarJogo2" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 142.491, -9.37695 )
 scale = Vector2( 0.258323, 0.258323 )
@@ -1238,8 +1238,8 @@ normal = ExtResource( 4 )
 
 [node name="voltar" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 387.909, -300.865 )
-scale = Vector2( 0.211087, 0.211087 )
+position = Vector2( 346.94, -300.865 )
+scale = Vector2( 0.303151, 0.303151 )
 normal = ExtResource( 5 )
 
 [node name="title" type="Sprite" parent="."]
@@ -1323,6 +1323,7 @@ margin_bottom = 566.141
 color = Color( 0.823529, 0.368627, 0.317647, 1 )
 
 [node name="Popup" type="Popup" parent="."]
+editor/display_folded = true
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = -528.0
 margin_top = -312.0
@@ -1404,12 +1405,11 @@ margin_bottom = 322.467
 theme = SubResource( 4 )
 
 [node name="ok" type="TouchScreenButton" parent="Popup"]
-position = Vector2( 535.131, 368.102 )
-scale = Vector2( 0.140936, 0.140936 )
+position = Vector2( 542.235, 361.472 )
+scale = Vector2( 0.236314, 0.236314 )
 normal = ExtResource( 13 )
 
 [node name="Popup2" type="Popup" parent="."]
-editor/display_folded = true
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = -528.0
 margin_top = -312.0
@@ -1491,8 +1491,8 @@ margin_bottom = 322.467
 theme = SubResource( 4 )
 
 [node name="okInstruções" type="TouchScreenButton" parent="Popup2"]
-position = Vector2( 498.529, 368.102 )
-scale = Vector2( 0.140936, 0.140936 )
+position = Vector2( 502.662, 362.716 )
+scale = Vector2( 0.225307, 0.225307 )
 normal = ExtResource( 13 )
 
 [connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciarJogo_pressed"]

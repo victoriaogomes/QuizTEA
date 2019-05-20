@@ -17,7 +17,7 @@
 [ext_resource path="res://sprites/texts/MenuInicial.png" type="Texture" id=15]
 [ext_resource path="res://sprites/texts/Sair.png" type="Texture" id=16]
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=1]
 tracks/0/type = "value"
 tracks/0/path = NodePath("congrats:self_modulate")
 tracks/0/interp = 1
@@ -469,7 +469,7 @@ scale = Vector2( 0.248, 0.248 )
 normal = ExtResource( 16 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/transition_winscene = SubResource( 2 )
+anims/transition_winscene = SubResource( 1 )
 
 [connection signal="pressed" from="option1/jogarNovamente" to="." method="_on_jogarNovamente_pressed"]
 [connection signal="pressed" from="option2/menuInicial" to="." method="_on_menuInicial_pressed"]

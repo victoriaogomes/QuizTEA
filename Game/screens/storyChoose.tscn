@@ -75,14 +75,13 @@ margin_top = -251.791
 margin_right = 1169.82
 margin_bottom = -189.791
 
-[node name="Sprite" type="Sprite" parent="option1"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 226.611, 30.6452 )
-scale = Vector2( 0.44157, 0.151944 )
-texture = ExtResource( 7 )
-
 [node name="tresPorquinhos" type="TouchScreenButton" parent="option1"]
 self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -18.3351, -6.30409 )
+scale = Vector2( 0.441803, 0.15555 )
+normal = ExtResource( 7 )
+
+[node name="tresPorquinhos2" type="TouchScreenButton" parent="option1"]
 position = Vector2( 52.1277, 6.69745 )
 scale = Vector2( 0.265, 0.265 )
 normal = ExtResource( 8 )
@@ -95,14 +94,13 @@ margin_top = -129.204
 margin_right = 1168.83
 margin_bottom = -67.204
 
-[node name="Sprite4" type="Sprite" parent="option2"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 226.521, 31.1041 )
-scale = Vector2( 0.44203, 0.154191 )
-texture = ExtResource( 7 )
-
 [node name="pequenaSereia" type="TouchScreenButton" parent="option2"]
 self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -18.9799, -11.7683 )
+scale = Vector2( 0.441645, 0.167316 )
+normal = ExtResource( 7 )
+
+[node name="pequenaSereia2" type="TouchScreenButton" parent="option2"]
 position = Vector2( 53.3979, 5.78809 )
 scale = Vector2( 0.258, 0.258 )
 normal = ExtResource( 9 )
