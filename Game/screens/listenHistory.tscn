@@ -1258,51 +1258,50 @@ texture = ExtResource( 7 )
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -519.0
 margin_top = 225.0
-margin_right = -366.0
-margin_bottom = 261.0
+margin_right = -348.0
+margin_bottom = 265.0
 color = Color( 0.823529, 0.368627, 0.317647, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/transition3 = SubResource( 1 )
 
 [node name="history" type="AudioStreamPlayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="goBack" type="TouchScreenButton" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 10.847, 545.377 )
-scale = Vector2( 0.960007, 0.960007 )
+position = Vector2( 8.55624, 543.945 )
+scale = Vector2( 1.2854, 1.2854 )
 normal = ExtResource( 9 )
 
 [node name="play" type="TouchScreenButton" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 71.585, 543.692 )
-scale = Vector2( 0.925989, 0.925988 )
+position = Vector2( 75.0211, 540.256 )
+scale = Vector2( 1.285, 1.285 )
 normal = ExtResource( 10 )
 
 [node name="goForward" type="TouchScreenButton" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 109.258, 545.297 )
-scale = Vector2( 0.936226, 0.936226 )
+position = Vector2( 112.694, 543.579 )
+scale = Vector2( 1.285, 1.285 )
 normal = ExtResource( 11 )
 
 [node name="Timer" type="Timer" parent="history"]
 
 [node name="backTimingPassing" type="ColorRect" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 517.543
-margin_top = 537.756
-margin_right = 625.543
-margin_bottom = 573.756
+margin_left = 538.0
+margin_top = 538.0
+margin_right = 646.0
+margin_bottom = 578.0
 color = Color( 0.823529, 0.368627, 0.317647, 1 )
 
 [node name="timePassing" type="Label" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 528.775
-margin_top = 536.626
-margin_right = 616.775
-margin_bottom = 576.626
+margin_left = 546.727
+margin_top = 537.908
+margin_right = 634.727
+margin_bottom = 577.908
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
@@ -1310,21 +1309,20 @@ text = "00:00"
 
 [node name="playerBlank" type="ColorRect" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 153.543
-margin_top = 537.756
-margin_right = 517.543
-margin_bottom = 573.756
+margin_left = 175.0
+margin_top = 538.0
+margin_right = 539.0
+margin_bottom = 578.0
 
 [node name="playerExibition" type="ColorRect" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 167.746
-margin_top = 548.618
-margin_right = 173.746
-margin_bottom = 565.618
+margin_left = 189.58
+margin_top = 549.141
+margin_right = 197.58
+margin_bottom = 566.141
 color = Color( 0.823529, 0.368627, 0.317647, 1 )
 
 [node name="Popup" type="Popup" parent="."]
-editor/display_folded = true
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = -528.0
 margin_top = -312.0
@@ -1352,9 +1350,9 @@ margin_top = 268.467
 margin_right = 767.535
 margin_bottom = 352.467
 custom_fonts/font = SubResource( 3 )
-text = "Que tal terminar de ouvir a historinha 
-antes de começar a jogar? Garanto 
-que ela é divertida!"
+text = "Preciso que você ouça a historinha
+pelo menos uma vez antes de começar
+a jogar. Garanto que ela é divertida!"
 
 [node name="ColorRect" type="ColorRect" parent="Popup"]
 margin_left = 337.535
@@ -1373,40 +1371,127 @@ theme = SubResource( 4 )
 [node name="ColorRect3" type="ColorRect" parent="Popup"]
 margin_left = 337.535
 margin_top = 395.467
-margin_right = 768.535
+margin_right = 779.535
 margin_bottom = 396.467
 theme = SubResource( 4 )
 
 [node name="ColorRect4" type="ColorRect" parent="Popup"]
 margin_left = 337.535
 margin_top = 261.467
-margin_right = 768.535
+margin_right = 779.535
 margin_bottom = 262.467
 theme = SubResource( 4 )
 
 [node name="ColorRect5" type="ColorRect" parent="Popup"]
 margin_left = 337.535
 margin_top = 232.467
-margin_right = 768.535
+margin_right = 779.535
 margin_bottom = 233.467
 theme = SubResource( 4 )
 
 [node name="ColorRect2" type="ColorRect" parent="Popup"]
-margin_left = 767.535
+margin_left = 779.535
 margin_top = 306.467
-margin_right = 768.535
+margin_right = 780.535
 margin_bottom = 396.467
 theme = SubResource( 4 )
 
 [node name="ColorRect7" type="ColorRect" parent="Popup"]
-margin_left = 767.535
+margin_left = 779.535
 margin_top = 232.467
-margin_right = 768.535
+margin_right = 780.535
 margin_bottom = 322.467
 theme = SubResource( 4 )
 
 [node name="ok" type="TouchScreenButton" parent="Popup"]
 position = Vector2( 535.131, 368.102 )
+scale = Vector2( 0.140936, 0.140936 )
+normal = ExtResource( 13 )
+
+[node name="Popup2" type="Popup" parent="."]
+editor/display_folded = true
+self_modulate = Color( 0, 0, 0, 1 )
+margin_left = -528.0
+margin_top = -312.0
+margin_right = 501.0
+margin_bottom = 289.0
+
+[node name="blackEffect" type="ColorRect" parent="Popup2"]
+self_modulate = Color( 0, 0, 0, 0.901961 )
+margin_left = -1.0
+margin_top = -2.0
+margin_right = 1031.0
+margin_bottom = 602.0
+
+[node name="title" type="Label" parent="Popup2"]
+margin_left = 453.933
+margin_top = 233.467
+margin_right = 595.933
+margin_bottom = 259.467
+custom_fonts/font = SubResource( 3 )
+text = "Ei, espera aí!"
+
+[node name="text" type="Label" parent="Popup2"]
+margin_left = 305.398
+margin_top = 268.0
+margin_right = 753.398
+margin_bottom = 352.0
+custom_fonts/font = SubResource( 3 )
+text = "Preciso que leia nossas instruções antes 
+de começar a jogar. Isso te ajudará a 
+ter uma melhor experiência no jogo."
+
+[node name="ColorRect" type="ColorRect" parent="Popup2"]
+margin_left = 300.933
+margin_top = 305.467
+margin_right = 301.933
+margin_bottom = 395.467
+theme = SubResource( 4 )
+
+[node name="ColorRect6" type="ColorRect" parent="Popup2"]
+margin_left = 300.933
+margin_top = 233.467
+margin_right = 301.933
+margin_bottom = 323.467
+theme = SubResource( 4 )
+
+[node name="ColorRect3" type="ColorRect" parent="Popup2"]
+margin_left = 300.933
+margin_top = 395.467
+margin_right = 749.933
+margin_bottom = 396.467
+theme = SubResource( 4 )
+
+[node name="ColorRect4" type="ColorRect" parent="Popup2"]
+margin_left = 300.933
+margin_top = 261.467
+margin_right = 749.933
+margin_bottom = 262.467
+theme = SubResource( 4 )
+
+[node name="ColorRect5" type="ColorRect" parent="Popup2"]
+margin_left = 300.933
+margin_top = 232.467
+margin_right = 749.933
+margin_bottom = 233.467
+theme = SubResource( 4 )
+
+[node name="ColorRect2" type="ColorRect" parent="Popup2"]
+margin_left = 749.933
+margin_top = 306.467
+margin_right = 750.933
+margin_bottom = 396.467
+theme = SubResource( 4 )
+
+[node name="ColorRect7" type="ColorRect" parent="Popup2"]
+margin_left = 749.933
+margin_top = 232.467
+margin_right = 750.933
+margin_bottom = 322.467
+theme = SubResource( 4 )
+
+[node name="okInstruções" type="TouchScreenButton" parent="Popup2"]
+position = Vector2( 498.529, 368.102 )
 scale = Vector2( 0.140936, 0.140936 )
 normal = ExtResource( 13 )
 
@@ -1417,3 +1502,4 @@ normal = ExtResource( 13 )
 [connection signal="pressed" from="history/play" to="history" method="_on_play_pressed"]
 [connection signal="pressed" from="history/goForward" to="history" method="_on_goForward_pressed"]
 [connection signal="pressed" from="Popup/ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="Popup2/okInstruções" to="." method="_on_okInstrues_pressed"]

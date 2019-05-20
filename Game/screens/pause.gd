@@ -30,6 +30,12 @@ func _changeScene(scene):
 	get_tree().change_scene_to(scene)
 
 func _on_close_pressed():
+	get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(false)
+	get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(false)
+	get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(false)
+	get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(false)
+	get_node("/root/Node2D/optionsAnimation").set_visible(false)
+	get_node("/root/Node2D/pause").set_block_signals(false)
 	get_node("/root/Node2D/pauseScreen/AnimationPlayer").play("Pausemenu", -1, 1.0, false)
 	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")
 	get_node("/root/Node2D/pauseScreen").set_visible(false)

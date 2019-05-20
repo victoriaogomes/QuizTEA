@@ -1,23 +1,19 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://screens/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
 [ext_resource path="res://sprites/texts/gameQuestion.png" type="Texture" id=3]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte1.jpg" type="Texture" id=4]
 [ext_resource path="res://sprites/images/shadow.png" type="Texture" id=5]
 [ext_resource path="res://sprites/images/button.png" type="Texture" id=6]
 [ext_resource path="res://sprites/images/pin.png" type="Texture" id=7]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte3.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte3.jpg" type="Texture" id=8]
 [ext_resource path="res://sprites/images/pause2.png" type="Texture" id=9]
 [ext_resource path="res://screens/optionsAnimation.tscn" type="PackedScene" id=10]
 [ext_resource path="res://screens/pause.tscn" type="PackedScene" id=11]
 [ext_resource path="res://screens/wrongAnswerPopUp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://screens/musicPlayer.gd" type="Script" id=14]
-[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=15]
-[ext_resource path="res://sprites/images/play.png" type="Texture" id=16]
-[ext_resource path="res://sprites/images/goForward.png" type="Texture" id=17]
-[ext_resource path="res://sprites/texts/continuarJogando.png" type="Texture" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -52,114 +48,116 @@ texture = ExtResource( 3 )
 editor/display_folded = true
 position = Vector2( -183.242, -400.987 )
 rotation = 0.174533
-scale = Vector2( 0.277, 0.277 )
+scale = Vector2( 0.294198, 0.294198 )
 normal = ExtResource( 4 )
 
 [node name="shadowPolaroid3" type="Sprite" parent="polaroid3"]
-position = Vector2( 654.15, 723.417 )
-rotation = 1.83382e-008
-scale = Vector2( 3.25029, 3.23119 )
+position = Vector2( 615.91, 681.128 )
+rotation = 1.94768e-008
+scale = Vector2( 3.06029, 3.0423 )
 texture = ExtResource( 5 )
 
 [node name="polaroid2" type="TouchScreenButton" parent="polaroid3"]
-position = Vector2( -291.259, 243.245 )
+position = Vector2( -274.233, 229.026 )
 rotation = -0.349066
+scale = Vector2( 1.00446, 1.00446 )
 normal = ExtResource( 4 )
 
 [node name="shadowPolaroid2" type="Sprite" parent="polaroid3"]
-position = Vector2( 573.753, 701.034 )
+position = Vector2( 540.213, 660.054 )
 rotation = -0.349066
-scale = Vector2( 3.26979, 3.23923 )
+scale = Vector2( 3.07865, 3.04987 )
 texture = ExtResource( 5 )
 
 [node name="polaroid1" type="TouchScreenButton" parent="polaroid3"]
-position = Vector2( -161.96, 150.969 )
+position = Vector2( -152.492, 142.144 )
 rotation = -0.174533
+scale = Vector2( 1.00476, 1.00476 )
 normal = ExtResource( 4 )
 
 [node name="shadowPolaroid1" type="Sprite" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0.894118 )
-position = Vector2( 611.298, 748.86 )
+position = Vector2( 575.563, 705.084 )
 rotation = -0.174533
-scale = Vector2( 3.22975, 3.25229 )
+scale = Vector2( 3.04095, 3.06217 )
 texture = ExtResource( 5 )
 
 [node name="half1_1" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -167.444, 160.97 )
+position = Vector2( -157.656, 151.56 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 9.22874 )
+scale = Vector2( 3.31684, 8.68926 )
 normal = ExtResource( 6 )
 
 [node name="half1_2" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -46.2268, 852.337 )
+position = Vector2( -43.5246, 802.512 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 8.62453 )
+scale = Vector2( 3.31684, 8.12037 )
 normal = ExtResource( 6 )
 passby_press = true
 
 [node name="pin" type="Sprite" parent="polaroid3"]
-position = Vector2( 425.496, 32.4277 )
+position = Vector2( 400.623, 30.5321 )
 rotation = -0.174533
-scale = Vector2( 2.38831, 2.38831 )
+scale = Vector2( 2.2487, 2.2487 )
 texture = ExtResource( 7 )
 
 [node name="polaroid3_2" type="TouchScreenButton" parent="."]
 editor/display_folded = true
 position = Vector2( 324.144, -400.987 )
 rotation = 0.174533
-scale = Vector2( 0.277, 0.277 )
+scale = Vector2( 0.295659, 0.295659 )
 normal = ExtResource( 4 )
 
 [node name="shadowPolaroid3_2" type="Sprite" parent="polaroid3_2"]
-position = Vector2( 654.15, 723.417 )
-rotation = 1.83382e-008
-scale = Vector2( 3.25029, 3.23119 )
+position = Vector2( 612.866, 677.761 )
+scale = Vector2( 3.04516, 3.02727 )
 texture = ExtResource( 5 )
 
 [node name="polaroid2" type="TouchScreenButton" parent="polaroid3_2"]
-position = Vector2( -291.259, 243.245 )
+position = Vector2( -272.877, 227.894 )
 rotation = -0.349066
+scale = Vector2( 1.00079, 1.00079 )
 normal = ExtResource( 4 )
 
 [node name="shadowPolaroid2" type="Sprite" parent="polaroid3_2"]
-position = Vector2( 573.753, 701.034 )
+position = Vector2( 537.543, 656.791 )
 rotation = -0.349066
-scale = Vector2( 3.26979, 3.23923 )
+scale = Vector2( 3.06343, 3.0348 )
 texture = ExtResource( 5 )
 
 [node name="polaroid1" type="TouchScreenButton" parent="polaroid3_2"]
-position = Vector2( -164.802, 150.242 )
+position = Vector2( -154.401, 140.76 )
 rotation = -0.174533
-scale = Vector2( 0.999605, 0.999605 )
+scale = Vector2( 1.00167, 1.00167 )
 normal = ExtResource( 8 )
 
 [node name="shadowPolaroid1" type="Sprite" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0.894118 )
-position = Vector2( 611.298, 748.86 )
+position = Vector2( 572.719, 701.599 )
 rotation = -0.174533
-scale = Vector2( 3.22975, 3.25229 )
+scale = Vector2( 3.02592, 3.04703 )
 texture = ExtResource( 5 )
 
 [node name="pin" type="Sprite" parent="polaroid3_2"]
-position = Vector2( 443.432, 33.3257 )
+position = Vector2( 415.447, 31.2224 )
 rotation = -0.174533
-scale = Vector2( 2.38831, 2.38831 )
+scale = Vector2( 2.23758, 2.23758 )
 texture = ExtResource( 7 )
 
 [node name="half2_1" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -163.817, 162.958 )
+position = Vector2( -153.478, 152.674 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 9.38977 )
+scale = Vector2( 3.30044, 8.79717 )
 normal = ExtResource( 6 )
 
 [node name="half2_2" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -43.8351, 852.696 )
+position = Vector2( -41.0686, 798.881 )
 rotation = -0.174533
-scale = Vector2( 3.52277, 8.56544 )
+scale = Vector2( 3.30044, 8.02487 )
 normal = ExtResource( 6 )
 passby_press = true
 
@@ -173,8 +171,6 @@ visible = false
 position = Vector2( -0.00775146, -0.0838013 )
 rotation = 1.49012e-008
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [node name="pauseScreen" parent="." instance=ExtResource( 11 )]
 visible = false
 position = Vector2( -0.008, -0.084 )
@@ -184,6 +180,7 @@ visible = false
 position = Vector2( 0.931427, 0.516083 )
 
 [node name="Popup" type="Popup" parent="."]
+editor/display_folded = true
 margin_left = -312.0
 margin_top = -480.0
 margin_right = 713.0
@@ -191,7 +188,6 @@ margin_bottom = 120.0
 
 [node name="blackEffect" type="ColorRect" parent="Popup"]
 self_modulate = Color( 0, 0, 0, 0.901961 )
-margin_left = 1.0
 margin_right = 1026.0
 margin_bottom = 601.0
 color = Color( 0, 0, 0, 0.901961 )
@@ -277,22 +273,16 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 script = ExtResource( 14 )
 
 [node name="goBack" type="TouchScreenButton" parent="Popup/history"]
-visible = false
 position = Vector2( 201.524, 288.207 )
 scale = Vector2( 0.96, 0.96 )
-normal = ExtResource( 15 )
 
 [node name="play" type="TouchScreenButton" parent="Popup/history"]
-visible = false
 position = Vector2( 263.039, 285.905 )
 scale = Vector2( 0.96, 0.96 )
-normal = ExtResource( 16 )
 
 [node name="goForward" type="TouchScreenButton" parent="Popup/history"]
-visible = false
 position = Vector2( 302.546, 288.03 )
 scale = Vector2( 0.96, 0.96 )
-normal = ExtResource( 17 )
 
 [node name="timePassing" type="Label" parent="Popup/history"]
 visible = false
@@ -314,10 +304,8 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 [node name="Timer" type="Timer" parent="Popup/history"]
 
 [node name="keepPlaying" type="TouchScreenButton" parent="Popup/history"]
-visible = false
 position = Vector2( 372.746, 325.133 )
 scale = Vector2( 0.228871, 0.228871 )
-normal = ExtResource( 18 )
 
 [connection signal="pressed" from="polaroid3/half1_1" to="." method="_on_half1_1_pressed"]
 [connection signal="pressed" from="polaroid3/half1_2" to="." method="_on_half1_2_pressed"]

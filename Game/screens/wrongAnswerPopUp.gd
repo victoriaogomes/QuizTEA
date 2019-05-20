@@ -1,7 +1,13 @@
 extends Node2D
 
-var scenesTimes = [0, 12.725333, 30.613333, 37.653332, 44.234665, 55.152, 71.429337, 78.496002,
-85.008003, 99.823997, 118.037331, 128.325333, 140.223999, 148.725327]
+var scenesTimes = [
+[0, 8.944, 20.581312, 24.906647, 29.087978, 36.27198, 46.863979, 50.954647, 55.301311, 64.826645, 75.813309, 81.461311, 89.034645, 94.287979],
+[0, 13.68, 21.6, 29.754667, 39.509335, 52.010666, 58.080002, 67.418663, 74.410667, 78.346649, 81.786644, 86.362648, 90.826645, 96.245316, 104.559982],
+[0, 6.133333, 10.362667, 23.440001, 30.154667, 40.469334, 43.674667, 50.762665, 56.015999, 66.842667, 76.767998, 89.984001]
+]
+
+var buttons = [preload("res://sprites/images/goBack.png"), preload("res://sprites/images/play.png"),
+preload("res://sprites/images/goForward.png"), preload("res://sprites/texts/continuarJogando.png")]
 
 func _ready():
 	pass # Replace with function body.
@@ -12,19 +18,21 @@ func _on_ouvirAgain_pressed():
 	yield(get_node("/root/Node2D/wrongAnswer/AnimationPlayer"), "animation_finished")
 	get_node("/root/Node2D/wrongAnswer").set_visible(false)
 	get_node("/root/Node2D/Popup").popup()
-	get_node("/root/Node2D/Popup/history/goBack").set_visible(true)
-	get_node("/root/Node2D/Popup/history/play").set_visible(true)
-	get_node("/root/Node2D/Popup/history/goForward").set_visible(true)
+	
+	get_node("/root/Node2D/Popup/history/goBack").set_texture(buttons[0])
+	get_node("/root/Node2D/Popup/history/play").set_texture(buttons[1])
+	get_node("/root/Node2D/Popup/history/goForward").set_texture(buttons[2])
+	get_node("/root/Node2D/Popup/history/keepPlaying").set_texture(buttons[3])
+	
 	get_node("/root/Node2D/Popup/history/timePassing").set_visible(true)
 	get_node("/root/Node2D/Popup/history/playerExibition").set_visible(true)
-	get_node("/root/Node2D/Popup/history/keepPlaying").set_visible(true)
 	
 	get_node("/root/Node2D/Popup/history/goBack").set_block_signals(false)
 	get_node("/root/Node2D/Popup/history/play").set_block_signals(false)
 	get_node("/root/Node2D/Popup/history/goForward").set_block_signals(false)
 	get_node("/root/Node2D/Popup/history/keepPlaying").set_block_signals(false)
 	
-	get_node("/root/Node2D/Popup/history").setAudioTime(scenesTimes[global_config.level])
+	get_node("/root/Node2D/Popup/history").setAudioTime(scenesTimes[global_config.storychosen-1][global_config.level])
 
 
 func _on_keepPlaying_pressed():

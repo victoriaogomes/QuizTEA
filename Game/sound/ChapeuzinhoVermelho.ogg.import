@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ChapeuzinhoVermelho.ogg-797f7ca17632cdcba30b5a221f59
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

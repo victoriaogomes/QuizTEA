@@ -17,23 +17,32 @@ func _ready():
 	get_tree().set_quit_on_go_back(false)
 	match(global_config.storychosen):
 		1:
-			vector = [preload("res://sprites/images/3Porquinhos/Parte1.png"), preload("res://sprites/images/3Porquinhos/Parte2.png"),
-			preload("res://sprites/images/3Porquinhos/Parte3.png"), preload("res://sprites/images/3Porquinhos/Parte4.png"),
-			preload("res://sprites/images/3Porquinhos/Parte5.png"), preload("res://sprites/images/3Porquinhos/Parte6.png"),
-			preload("res://sprites/images/3Porquinhos/Parte7.png"), preload("res://sprites/images/3Porquinhos/Parte8.png"),
-			preload("res://sprites/images/3Porquinhos/Parte9.png"), preload("res://sprites/images/3Porquinhos/Parte10.png"),
-			preload("res://sprites/images/3Porquinhos/Parte11.png"), preload("res://sprites/images/3Porquinhos/Parte12.png"),
-			preload("res://sprites/images/3Porquinhos/Parte13.png"), preload("res://sprites/images/3Porquinhos/Parte14.png")]
+			$Popup/title.set_text("Os três porquinhos")
+			vector = [preload("res://sprites/images/3Porquinhos/Parte1.jpg"), preload("res://sprites/images/3Porquinhos/Parte2.jpg"),
+			preload("res://sprites/images/3Porquinhos/Parte3.jpg"), preload("res://sprites/images/3Porquinhos/Parte4.jpg"),
+			preload("res://sprites/images/3Porquinhos/Parte5.jpg"), preload("res://sprites/images/3Porquinhos/Parte6.jpg"),
+			preload("res://sprites/images/3Porquinhos/Parte7.jpg"), preload("res://sprites/images/3Porquinhos/Parte8.jpg"),
+			preload("res://sprites/images/3Porquinhos/Parte9.jpg"), preload("res://sprites/images/3Porquinhos/Parte10.jpg"),
+			preload("res://sprites/images/3Porquinhos/Parte11.jpg"), preload("res://sprites/images/3Porquinhos/Parte12.jpg"),
+			preload("res://sprites/images/3Porquinhos/Parte13.jpg"), preload("res://sprites/images/3Porquinhos/Parte14.jpg")]
 		2:
-			vector = [preload("res://sprites/images/ChapeuzinhoVermelho/Parte1.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte2.png"),
-			preload("res://sprites/images/ChapeuzinhoVermelho/Parte3.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte4.png"),
-			preload("res://sprites/images/ChapeuzinhoVermelho/Parte5.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte6.png"),
-			preload("res://sprites/images/ChapeuzinhoVermelho/Parte7.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte8.png"),
-			preload("res://sprites/images/ChapeuzinhoVermelho/Parte9.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte10.png"),
-			preload("res://sprites/images/ChapeuzinhoVermelho/Parte11.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte12.png"),
-			preload("res://sprites/images/ChapeuzinhoVermelho/Parte13.png"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte14.png")]
+			$Popup/title.set_text("Chapeuzinho Vermelho")
+			vector = [preload("res://sprites/images/ChapeuzinhoVermelho/Parte1.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte2.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte3.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte4.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte5.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte6.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte7.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte8.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte9.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte10.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte11.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte12.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte13.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte14.jpg"),
+			preload("res://sprites/images/ChapeuzinhoVermelho/Parte15.jpg")]
 		3:
-			pass
+			$Popup/title.set_text("A pequena Sereia")
+			vector = [preload("res://sprites/images/PequenaSereia/Parte1.jpg"), preload("res://sprites/images/PequenaSereia/Parte2.jpg"),
+			preload("res://sprites/images/PequenaSereia/Parte3.jpg"), preload("res://sprites/images/PequenaSereia/Parte4.jpg"),
+			preload("res://sprites/images/PequenaSereia/Parte5.jpg"), preload("res://sprites/images/PequenaSereia/Parte6.jpg"),
+			preload("res://sprites/images/PequenaSereia/Parte7.jpg"), preload("res://sprites/images/PequenaSereia/Parte8.jpg"),
+			preload("res://sprites/images/PequenaSereia/Parte9.jpg"), preload("res://sprites/images/PequenaSereia/Parte10.jpg"),
+			preload("res://sprites/images/PequenaSereia/Parte11.jpg"), preload("res://sprites/images/PequenaSereia/Parte12.jpg")]
 	_set_options()
 
 
@@ -44,6 +53,8 @@ func next():
 			_set_options()
 		else:
 		#warning-ignore:return_value_discarded
+			global_config.played_once = 1
+			global_config.save_game()
 			get_tree().change_scene_to(win_scene)
 	else:
 		if(givenAnswer == 0):
@@ -67,14 +78,18 @@ func next():
 
 
 func _set_options():
+	#Storychosen = 1: 3 porquinhos - level 0 ao 13
+	#Storychosen = 2: Chapeuzinho Vermelho - level 0 ao 14
+	#Storychosen = 2: A pequena sereia - level 0 ao 11
+	var valores_sorteio1 = [12,13,10]
+	var valores_sorteio2 = [13,14,11]
 	correctAnswer = randi()%2
 	givenAnswer = 3
-	if(global_config.level<12):
-		# Sortear um número entre (level+1) e 13:
-		pos = (randi()%(13-(global_config.level+1))) + (global_config.level+1)
+	if(global_config.level<valores_sorteio1[global_config.storychosen-1]):
+		# Sortear um número entre (level+2) e 13:
+		pos = (randi()%(valores_sorteio2[global_config.storychosen-1]-(global_config.level+1))) + (global_config.level+1)
 	else:
-		pos = randi()%12
-	print("Tamo no level " + str(global_config.level) + "agora")
+		pos = randi()%valores_sorteio1[global_config.storychosen-1]
 	match(correctAnswer):
 		0: 
 			$polaroid3/polaroid1.set_texture(vector[global_config.level])
@@ -86,10 +101,11 @@ func _set_options():
 
 func _zoomScreenAnimation(var type):
 	#Faz com que não seja possível clicar nos botões:
-	get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(true)
-	get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(true)
-	get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(true)
-	get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(true)
+	$polaroid3/half1_1.set_block_signals(true)
+	$polaroid3/half1_2.set_block_signals(true)
+	$polaroid3_2/half2_1.set_block_signals(true)
+	$polaroid3_2/half2_2.set_block_signals(true)
+	$optionsAnimation/close.set_block_signals(false)
 	if(type == 0):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
@@ -137,7 +153,6 @@ func _verifyButtonsOption0():
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option1", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 0
-		print("Chamando next em option0")
 		next()
 	else:
 		$pauseScreen/close.set_block_signals(true)
@@ -157,7 +172,6 @@ func _verifyButtonsOption1():
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 1
-		print("Chamando next em option1")
 		next()
 	else:
 		$pauseScreen/close.set_block_signals(true)
@@ -169,9 +183,14 @@ func _verifyButtonsOption1():
 
 
 func _on_pause_pressed():
+	$polaroid3/half1_1.set_block_signals(true)
+	$polaroid3/half1_2.set_block_signals(true)
+	$polaroid3_2/half2_1.set_block_signals(true)
+	$polaroid3_2/half2_2.set_block_signals(true)
 	$pauseScreen/close.set_block_signals(false)
 	$pause.set_block_signals(true)
 	$optionsAnimation/close.set_block_signals(true)
 	$pauseScreen.set_visible(true)
+	$polaroid3/half1_1.set_block_signals(true)
 	$pauseScreen/AnimationPlayer.play_backwards("Pausemenu", -1)
 	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")

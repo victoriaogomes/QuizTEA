@@ -11,5 +11,5 @@ dest_files=[ "res://.import/PequenaSereia.ogg-ff4f416cb20a670ebab4e5ca3c763d78.o
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

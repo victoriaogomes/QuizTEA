@@ -2,7 +2,7 @@
 
 [ext_resource path="res://screens/zoomScreen.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/close.png" type="Texture" id=2]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte1.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte1.jpg" type="Texture" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "answer_Option1"
@@ -65,7 +65,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.277, 0.277 ), Vector2( 0.277, 0.277 ) ]
+"values": [ Vector2( 0.296, 0.296 ), Vector2( 0.296, 0.296 ) ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -117,7 +117,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.277, 0.277 ), Vector2( 0.277, 0.277 ) ]
+"values": [ Vector2( 0.296, 0.296 ), Vector2( 0.296, 0.296 ) ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -143,7 +143,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.277, 0.277 ), Vector2( 0.394105, 0.394105 ) ]
+"values": [ Vector2( 0.296, 0.296 ), Vector2( 0.394105, 0.394105 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("ColorRect:self_modulate")
@@ -205,7 +205,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0.277, 0.277 ), Vector2( 0.394105, 0.394105 ) ]
+"values": [ Vector2( 0.296, 0.296 ), Vector2( 0.394105, 0.394105 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("ColorRect:self_modulate")
@@ -270,7 +270,7 @@ anims/zoom_in_Option2 = SubResource( 4 )
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2( 271.961, -367.929 )
-scale = Vector2( 0.277, 0.277 )
+scale = Vector2( 0.296, 0.296 )
 normal = ExtResource( 3 )
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]

@@ -36,6 +36,7 @@ Vector2(0.709,0.709),
 Vector2(0.709,0.709)]
 
 var titleScreen = preload("res://screens/titleScreen.tscn")
+var game_scene = preload("res://screens/game.tscn")
 
 func _ready():
 	pass # Replace with function body.
@@ -45,6 +46,11 @@ func _on_next_pressed():
 	instructionNumber = instructionNumber + 1
 	if(instructionNumber == 9):
 		$next.set_visible(false)
+		global_config.played_once = 1
+		global_config.save_game()
+		if(global_config.comeFrom_listenHistory == 1):
+			global_config.comeFrom_listenHistory = 0
+			$Popup.popup()
 	$previous.set_visible(true)
 	_putImage()
 
@@ -109,3 +115,8 @@ func _putImage():
 func _on_back_pressed():
 	#warning-ignore:return_value_discarded
 	get_tree().change_scene_to(titleScreen)
+
+
+func _on_iniciarJogo_pressed():
+	#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(game_scene)
