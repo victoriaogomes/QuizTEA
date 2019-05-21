@@ -14,7 +14,7 @@ dest_files=[ "res://.import/LivroPequenaSereia.png-701320e3b1afb9c0d0074617d95ee
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

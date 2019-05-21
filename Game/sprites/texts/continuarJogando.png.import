@@ -14,7 +14,7 @@ dest_files=[ "res://.import/continuarJogando.png-b0c3a0dcb8ac98cfcb56ebb0d88e99d
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

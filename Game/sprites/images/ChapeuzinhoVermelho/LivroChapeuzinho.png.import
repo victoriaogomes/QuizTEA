@@ -14,7 +14,7 @@ dest_files=[ "res://.import/LivroChapeuzinho.png-73598a5a05b5f583fc207e9d88e05df
 
 [params]
 
-compress/mode=0
+compress/mode=1
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

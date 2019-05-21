@@ -372,6 +372,7 @@ scale = Vector2( 2.55616, 0.581922 )
 texture = ExtResource( 2 )
 
 [node name="baloon1" type="Sprite" parent="."]
+editor/display_folded = true
 position = Vector2( -209.684, -140.056 )
 scale = Vector2( 0.294995, 0.294995 )
 texture = ExtResource( 3 )
