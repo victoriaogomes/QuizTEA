@@ -3,10 +3,17 @@ extends Node2D
 var initial_scene = load("res://screens/titleScreen.tscn")
 var game_scene = load("res://screens/game.tscn")
 
+var musicOff = preload("res://sprites/images/soundOff.png")
+var musicOn = preload("res://sprites/images/soundOn.png")
+
 
 func _ready():
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
+	if(global_config.music == true):
+		$musicButton.set_texture(musicOn)
+	else:
+		$musicButton.set_texture(musicOff)
 	get_node("/root/Node2D/AnimationPlayer").play("transition_winscene", -1, 1.0, false)
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 
@@ -30,3 +37,11 @@ func _changeScene(scene):
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 #warning-ignore:return_value_discarded
 	get_tree().change_scene_to(scene)
+
+func _on_musicButton_pressed():
+	if(global_config.music == true):
+		global_config.music_off()
+		$musicButton.set_texture(musicOff)
+	else:
+		global_config.music_on()
+		$musicButton.set_texture(musicOn)

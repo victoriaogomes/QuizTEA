@@ -7,7 +7,12 @@ var played_once
 #warning-ignore:unused_class_variable
 var zoomPic
 var initiatingGame
+var background_sound = AudioStreamPlayer.new()
 var comeFrom_listenHistory
+var music = true
+#Caso easymode = 1, Modo de jogo fácil está ativado
+#Caso easymode = 0, Modo de jogo difícil está ativado
+var easymode
 
 
 #Storychosen = 1: 3 porquinhos - level 0 ao 13
@@ -19,6 +24,8 @@ func _ready():
 	initiatingGame = 0
 	comeFrom_listenHistory = 0
 	load_game()
+	playSong()
+	music_on()
 
 
 func increment_level():
@@ -56,26 +63,20 @@ func load_game():
 		print("Erro ao carregar dados")
 	arquivo.close()
 
+#Liga a música do jogo
+func music_on():
+	music = true
+	background_sound.play()
 
 
-#func save_game():
-#	var save_game = File.new()
-#	save_game.open("res://savegame.save", File.WRITE)
-#	var node_data = played_once.call("save")
-#	save_game.store_line(to_json(node_data))
-#	save_game.close()
+#Desliga a música do jogo
+func music_off():
+	music = false
+	background_sound.stop()
 
 
-#func load_game():
-#	var save_game = File.new()
-#	if not save_game.file_exists("res://savegame.save"):
-#		played_once = 0 # Não tem arquivo pra carregar, então jogo nunca foi jogado
-#		return
-    # Load the file line by line and process that dictionary to restore
-    # the object it represents.
-#	save_game.open("res://savegame.save", File.READ)
-#	while not save_game.eof_reached():
-#		var current_line = parse_json(save_game.get_line())
-		# Firstly, we need to create the object and add it to the tree and set its position.
-#		played_once = load(current_line["filename"]).instance()
-#	save_game.close()
+#Função que seta as configurações da música que deve ser tocada na abertura do jogo
+func playSong():
+	self.add_child(background_sound)
+	background_sound.stream = load("res://sound/Ukulele_Beach.ogg")
+	background_sound.volume_db = -20

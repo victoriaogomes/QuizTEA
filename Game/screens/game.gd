@@ -11,13 +11,32 @@ var button1_2 = 0
 var button2_1 = 0
 var button2_2 = 0
 
+var question1 = preload("res://sprites/texts/gameQuestion.png")
+var question2 = preload("res://sprites/texts/gameQuestion2.png")
+
+var history = AudioStreamPlayer.new()
+
+var scenesTimes = [
+[0, 8.944, 20.581312, 24.906647, 29.087978, 36.27198, 46.863979, 50.954647, 55.301311, 64.826645, 75.813309, 81.461311, 89.034645, 94.287979],
+[0, 13.68, 21.6, 29.754667, 39.509335, 52.010666, 58.080002, 67.418663, 74.410667, 78.346649, 81.786644, 86.362648, 90.826645, 96.245316, 104.559982],
+[0, 6.133333, 10.362667, 23.440001, 30.154667, 40.469334, 43.674667, 50.762665, 56.015999, 66.842667, 76.767998, 89.984001]
+]
+
 
 func _ready():
+	if(global_config.easymode == 1):
+		$ColorRect.set_visible(true)
+		$ColorRect/ouvirTrecho.set_block_signals(false)
+	else:
+		$ColorRect.set_visible(false)
+		$ColorRect/ouvirTrecho.set_block_signals(true)
+	self.add_child(history)
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
 	match(global_config.storychosen):
 		1:
 			$Popup/title.set_text("Os três porquinhos")
+			history.stream = load("res://sound/3porquinhos.ogg")
 			vector = [preload("res://sprites/images/3Porquinhos/Parte1.jpg"), preload("res://sprites/images/3Porquinhos/Parte2.jpg"),
 			preload("res://sprites/images/3Porquinhos/Parte3.jpg"), preload("res://sprites/images/3Porquinhos/Parte4.jpg"),
 			preload("res://sprites/images/3Porquinhos/Parte5.jpg"), preload("res://sprites/images/3Porquinhos/Parte6.jpg"),
@@ -27,6 +46,7 @@ func _ready():
 			preload("res://sprites/images/3Porquinhos/Parte13.jpg"), preload("res://sprites/images/3Porquinhos/Parte14.jpg")]
 		2:
 			$Popup/title.set_text("Chapeuzinho Vermelho")
+			history.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
 			vector = [preload("res://sprites/images/ChapeuzinhoVermelho/Parte1.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte2.jpg"),
 			preload("res://sprites/images/ChapeuzinhoVermelho/Parte3.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte4.jpg"),
 			preload("res://sprites/images/ChapeuzinhoVermelho/Parte5.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte6.jpg"),
@@ -37,6 +57,7 @@ func _ready():
 			preload("res://sprites/images/ChapeuzinhoVermelho/Parte15.jpg")]
 		3:
 			$Popup/title.set_text("A pequena Sereia")
+			history.stream = load("res://sound/PequenaSereia.ogg")
 			vector = [preload("res://sprites/images/PequenaSereia/Parte1.jpg"), preload("res://sprites/images/PequenaSereia/Parte2.jpg"),
 			preload("res://sprites/images/PequenaSereia/Parte3.jpg"), preload("res://sprites/images/PequenaSereia/Parte4.jpg"),
 			preload("res://sprites/images/PequenaSereia/Parte5.jpg"), preload("res://sprites/images/PequenaSereia/Parte6.jpg"),
@@ -44,11 +65,23 @@ func _ready():
 			preload("res://sprites/images/PequenaSereia/Parte9.jpg"), preload("res://sprites/images/PequenaSereia/Parte10.jpg"),
 			preload("res://sprites/images/PequenaSereia/Parte11.jpg"), preload("res://sprites/images/PequenaSereia/Parte12.jpg")]
 	_set_options()
+	$text.set_texture(question1)
 
+#warning-ignore:unused_argument
+func _process(delta):
+	if(history.get_playback_position()>=scenesTimes[global_config.storychosen-1][global_config.level+1]):
+		history.stop()
+		if(global_config.music == true):
+			global_config.music_on()
+		set_process(false)
 
 func next():
 	if(givenAnswer == correctAnswer):
 		global_config.increment_level()
+		if(global_config.level > 0):
+			$text.set_texture(question2)
+		else:
+			$text.set_texture(question1)
 		if(global_config.finish !=1):
 			_set_options()
 		else:
@@ -189,8 +222,15 @@ func _on_pause_pressed():
 	$polaroid3_2/half2_2.set_block_signals(true)
 	$pauseScreen/close.set_block_signals(false)
 	$pause.set_block_signals(true)
+	$ColorRect.set_visible(false)
+	$ColorRect/ouvirTrecho.set_block_signals(true)
 	$optionsAnimation/close.set_block_signals(true)
 	$pauseScreen.set_visible(true)
 	$polaroid3/half1_1.set_block_signals(true)
 	$pauseScreen/AnimationPlayer.play_backwards("Pausemenu", -1)
 	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")
+
+func _on_ouvirTrecho_pressed():
+	set_process(true)
+	global_config.background_sound.stop()
+	history.play(scenesTimes[global_config.storychosen-1][global_config.level])

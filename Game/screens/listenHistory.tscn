@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://screens/listenHistory.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://sprites/images/goForward.png" type="Texture" id=11]
 [ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=12]
 [ext_resource path="res://sprites/texts/ok.png" type="Texture" id=13]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=14]
 
 [sub_resource type="Animation" id=1]
 resource_name = "transition3"
@@ -1217,7 +1218,6 @@ scale = Vector2( 2.54707, 0.591241 )
 texture = ExtResource( 2 )
 
 [node name="whiteBackground" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 18.8121
 margin_top = -16.88
 margin_right = 470.811
@@ -1225,37 +1225,31 @@ margin_bottom = 45.12
 color = Color( 1, 1, 1, 0.619608 )
 
 [node name="iniciarJogo" type="TouchScreenButton" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.410604, -29.3181 )
 scale = Vector2( 0.441447, 0.168712 )
 normal = ExtResource( 3 )
 
 [node name="iniciarJogo2" type="TouchScreenButton" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 142.491, -9.37695 )
 scale = Vector2( 0.258323, 0.258323 )
 normal = ExtResource( 4 )
 
 [node name="voltar" type="TouchScreenButton" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 346.94, -300.865 )
+position = Vector2( 356.188, 234.187 )
 scale = Vector2( 0.303151, 0.303151 )
 normal = ExtResource( 5 )
 
 [node name="title" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -239.334, -261.787 )
 scale = Vector2( 0.360504, 0.360504 )
 texture = ExtResource( 6 )
 
 [node name="book" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -218.908, -2.2298 )
 scale = Vector2( 0.265515, 0.265515 )
 texture = ExtResource( 7 )
 
 [node name="ColorRect5" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -519.0
 margin_top = 225.0
 margin_right = -348.0
@@ -1266,22 +1260,20 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 anims/transition3 = SubResource( 1 )
 
 [node name="history" type="AudioStreamPlayer" parent="."]
+editor/display_folded = true
 script = ExtResource( 8 )
 
 [node name="goBack" type="TouchScreenButton" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 8.55624, 543.945 )
 scale = Vector2( 1.2854, 1.2854 )
 normal = ExtResource( 9 )
 
 [node name="play" type="TouchScreenButton" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 75.0211, 540.256 )
 scale = Vector2( 1.285, 1.285 )
 normal = ExtResource( 10 )
 
 [node name="goForward" type="TouchScreenButton" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 112.694, 543.579 )
 scale = Vector2( 1.285, 1.285 )
 normal = ExtResource( 11 )
@@ -1289,7 +1281,6 @@ normal = ExtResource( 11 )
 [node name="Timer" type="Timer" parent="history"]
 
 [node name="backTimingPassing" type="ColorRect" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 538.0
 margin_top = 538.0
 margin_right = 646.0
@@ -1297,7 +1288,6 @@ margin_bottom = 578.0
 color = Color( 0.823529, 0.368627, 0.317647, 1 )
 
 [node name="timePassing" type="Label" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 546.727
 margin_top = 537.908
 margin_right = 634.727
@@ -1308,14 +1298,12 @@ custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "00:00"
 
 [node name="playerBlank" type="ColorRect" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 175.0
 margin_top = 538.0
 margin_right = 539.0
 margin_bottom = 578.0
 
 [node name="playerExibition" type="ColorRect" parent="history"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 189.58
 margin_top = 549.141
 margin_right = 197.58
@@ -1410,6 +1398,7 @@ scale = Vector2( 0.236314, 0.236314 )
 normal = ExtResource( 13 )
 
 [node name="Popup2" type="Popup" parent="."]
+editor/display_folded = true
 self_modulate = Color( 0, 0, 0, 1 )
 margin_left = -528.0
 margin_top = -312.0
@@ -1495,6 +1484,11 @@ position = Vector2( 502.662, 362.716 )
 scale = Vector2( 0.225307, 0.225307 )
 normal = ExtResource( 13 )
 
+[node name="musicButton" type="TouchScreenButton" parent="."]
+position = Vector2( 439.931, -303.857 )
+scale = Vector2( 0.309, 0.309 )
+normal = ExtResource( 14 )
+
 [connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciarJogo_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
 [connection signal="finished" from="history" to="history" method="audioFinished"]
@@ -1503,3 +1497,4 @@ normal = ExtResource( 13 )
 [connection signal="pressed" from="history/goForward" to="history" method="_on_goForward_pressed"]
 [connection signal="pressed" from="Popup/ok" to="." method="_on_ok_pressed"]
 [connection signal="pressed" from="Popup2/okInstruções" to="." method="_on_okInstrues_pressed"]
+[connection signal="pressed" from="musicButton" to="." method="_on_musicButton_pressed"]

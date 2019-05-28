@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://screens/titleScreenManager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://sprites/images/logo.png" type="Texture" id=17]
 [ext_resource path="res://sprites/texts/about.png" type="Texture" id=18]
 [ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=19]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=20]
 
 [sub_resource type="Animation" id=1]
 resource_name = "creditScreen"
@@ -355,6 +356,7 @@ scale = Vector2( 0.433623, 0.433623 )
 texture = ExtResource( 11 )
 
 [node name="option1" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 719.541
 margin_top = -251.791
@@ -380,6 +382,7 @@ scale = Vector2( 0.269, 0.269 )
 normal = ExtResource( 14 )
 
 [node name="option3" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 719.541
 margin_top = -129.204
@@ -440,6 +443,7 @@ scale = Vector2( 0.12217, 0.12217 )
 texture = ExtResource( 17 )
 
 [node name="goBack" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 380.0
 margin_top = 2.0
@@ -459,8 +463,15 @@ position = Vector2( 67.1147, 3.4397 )
 scale = Vector2( 0.22237, 0.22237 )
 normal = ExtResource( 19 )
 
+[node name="musicButton" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 649.464, -467.708 )
+scale = Vector2( 0.308931, 0.308931 )
+normal = ExtResource( 20 )
+
 [connection signal="pressed" from="option1/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="instructions" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="option3/creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="option3/creditos2" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="goBack/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="musicButton" to="." method="_on_musicButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://screens/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://screens/wrongAnswerPopUp.tscn" type="PackedScene" id=12]
 [ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=13]
 [ext_resource path="res://screens/musicPlayer.gd" type="Script" id=14]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=15]
+[ext_resource path="res://sprites/texts/OuvirTrecho.png" type="Texture" id=16]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -307,6 +310,28 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 position = Vector2( 372.746, 325.133 )
 scale = Vector2( 0.228871, 0.228871 )
 
+[node name="ColorRect" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.560784 )
+margin_left = -311.487
+margin_top = 54.6667
+margin_right = -54.4866
+margin_bottom = 103.667
+
+[node name="ouvirTrecho" type="TouchScreenButton" parent="ColorRect"]
+position = Vector2( -11.3418, -5.12964 )
+scale = Vector2( 0.251322, 0.121462 )
+normal = ExtResource( 15 )
+
+[node name="Sprite" type="Sprite" parent="ColorRect"]
+position = Vector2( 106.302, 22.5098 )
+scale = Vector2( 0.220011, 0.220011 )
+texture = ExtResource( 16 )
+
+[node name="Sprite2" type="Sprite" parent="ColorRect"]
+position = Vector2( 231.552, 23.3444 )
+scale = Vector2( 0.215451, 0.215451 )
+texture = ExtResource( 17 )
+
 [connection signal="pressed" from="polaroid3/half1_1" to="." method="_on_half1_1_pressed"]
 [connection signal="pressed" from="polaroid3/half1_2" to="." method="_on_half1_2_pressed"]
 [connection signal="pressed" from="polaroid3_2/half2_1" to="." method="_on_half2_1_pressed"]
@@ -316,3 +341,4 @@ scale = Vector2( 0.228871, 0.228871 )
 [connection signal="pressed" from="Popup/history/play" to="Popup/history" method="_on_play_pressed"]
 [connection signal="pressed" from="Popup/history/goForward" to="Popup/history" method="_on_goForward_pressed"]
 [connection signal="pressed" from="Popup/history/keepPlaying" to="Popup/history" method="_on_keepPlaying_pressed"]
+[connection signal="pressed" from="ColorRect/ouvirTrecho" to="." method="_on_ouvirTrecho_pressed"]

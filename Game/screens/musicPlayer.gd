@@ -55,10 +55,13 @@ func _on_pause_pressed():
 	$play.set_texture(play_asset)
 	pos = self.get_playback_position()
 	self.stop()
+	if(global_config.music == true):
+		global_config.music_on()
 	$Timer.stop()
 
 
 func _on_play_pressed():
+	global_config.background_sound.stop()
 	if($play.get_texture() == play_asset):
 		self.play(pos)
 		$Timer.start()
@@ -74,12 +77,15 @@ func on_TimeOut():
 
 func audioFinished():
 	listened_once = 1
+	if(global_config.music==true):
+		global_config.music_on()
 	$Timer.stop()
 	$play.set_texture(play_asset)
 
 
 func setAudioTime(var time):
 	self.play(time)
+	global_config.background_sound.stop()
 	$Timer.start()
 	$play.set_texture(pause_asset)
 
@@ -93,6 +99,8 @@ func _on_goForward_pressed():
 
 
 func _on_keepPlaying_pressed():
+	if(global_config.music==true):
+		global_config.music_on()
 	$goBack.set_block_signals(true)
 	$play.set_block_signals(true)
 	$goForward.set_block_signals(true)

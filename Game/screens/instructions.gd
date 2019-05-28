@@ -38,12 +38,19 @@ Vector2(0.709,0.709)]
 var titleScreen = preload("res://screens/titleScreen.tscn")
 var game_scene = preload("res://screens/game.tscn")
 
+var musicOff = preload("res://sprites/images/soundOff.png")
+var musicOn = preload("res://sprites/images/soundOn.png")
+
 func _ready():
 	pass # Replace with function body.
 
 
 func _on_next_pressed():
 	instructionNumber = instructionNumber + 1
+	if(global_config.music == true):
+		$musicButton.set_texture(musicOn)
+	else:
+		$musicButton.set_texture(musicOff)
 	if(instructionNumber == 9):
 		$next.set_visible(false)
 		global_config.played_once = 1
@@ -53,7 +60,6 @@ func _on_next_pressed():
 			$Popup.popup()
 	$previous.set_visible(true)
 	_putImage()
-
 
 func _on_previous_pressed():
 	instructionNumber = instructionNumber - 1
@@ -120,3 +126,12 @@ func _on_back_pressed():
 func _on_iniciarJogo_pressed():
 	#warning-ignore:return_value_discarded
 	get_tree().change_scene_to(game_scene)
+
+
+func _on_musicButton_pressed():
+	if(global_config.music == true):
+		global_config.music_off()
+		$musicButton.set_texture(musicOff)
+	else:
+		global_config.music_on()
+		$musicButton.set_texture(musicOn)

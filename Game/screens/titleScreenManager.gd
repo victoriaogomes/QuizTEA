@@ -2,12 +2,18 @@ extends Node2D
 
 var storyChose_scene = load("res://screens/storyChoose.tscn")
 var instruction_scene = load("res://screens/instructions.tscn")
+var musicOff = preload("res://sprites/images/soundOff.png")
+var musicOn = preload("res://sprites/images/soundOn.png")
 
 
 func _ready():
 	$goBack/voltar.set_block_signals(true)
 	get_tree().set_quit_on_go_back(true)
 	get_tree().set_auto_accept_quit(true)
+	if(global_config.music == true):
+		$musicButton.set_texture(musicOn)
+	else:
+		$musicButton.set_texture(musicOff)
 	if(global_config.initiatingGame == 0 ):
 		get_node("/root/Node2D/AnimationPlayer").play("logoAnimation", -1, 1.0, false)
 		yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
@@ -59,3 +65,12 @@ func _on_voltar_pressed():
 	$instructions.set_block_signals(false)
 	$option3/creditos.set_block_signals(false)
 	$goBack/voltar.set_block_signals(true)
+
+
+func _on_musicButton_pressed():
+	if(global_config.music == true):
+		global_config.music_off()
+		$musicButton.set_texture(musicOff)
+	else:
+		global_config.music_on()
+		$musicButton.set_texture(musicOn)
