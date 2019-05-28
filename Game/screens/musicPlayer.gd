@@ -15,16 +15,54 @@ func _ready():
 	set_process(true)
 	# history.volume_db = -20
 	#8 até 335: total de 327 pixels
+	global_config.connect("musicChanged", self, "changeBackSound")
 	match(global_config.storychosen):
 		1:
-			self.stream = load("res://sound/3porquinhos.ogg")
+			if(global_config.music == true):
+				self.stream = load("res://sound/3porquinhos.ogg")
+			else:
+				self.stream = load("res://sound/3porquinhos_01.ogg")
 			increment = float(327)/float(99.85)
 		2:
-			self.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
+			if(global_config.music == true):
+				self.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
+			else:
+				self.stream = load("res://sound/ChapeuzinhoVermelho_01.ogg")
 			increment = float(327)/float(117.47)
 		3:
-			self.stream = load("res://sound/PequenaSereia.ogg")
+			if(global_config.music == true):
+				self.stream = load("res://sound/PequenaSereia.ogg")
+			else:
+				self.stream = load("res://sound/PequenaSereia_01.ogg")
 			increment = float(327)/float(99.50)
+
+
+func changeBackSound():
+	var position
+	var isPlaying
+	position = self.get_playback_position()
+	isPlaying = self.is_playing()
+	match(global_config.storychosen):
+		1:
+			if(global_config.music == true):
+				self.stream = load("res://sound/3porquinhos.ogg")
+			else:
+				self.stream = load("res://sound/3porquinhos_01.ogg")
+		2:
+			if(global_config.music == true):
+				self.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
+			else:
+				self.stream = load("res://sound/ChapeuzinhoVermelho_01.ogg")
+		3:
+			if(global_config.music == true):
+				self.stream = load("res://sound/PequenaSereia.ogg")
+			else:
+				self.stream = load("res://sound/PequenaSereia_01.ogg")
+	if(isPlaying):
+		self.play(position)
+		global_config.background_sound.stop()
+	else:
+		self.seek(position)
 
 
 #warning-ignore:unused_argument

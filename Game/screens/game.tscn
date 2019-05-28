@@ -311,6 +311,7 @@ position = Vector2( 372.746, 325.133 )
 scale = Vector2( 0.228871, 0.228871 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0.560784 )
 margin_left = -311.487
 margin_top = 54.6667
@@ -331,6 +332,8 @@ texture = ExtResource( 16 )
 position = Vector2( 231.552, 23.3444 )
 scale = Vector2( 0.215451, 0.215451 )
 texture = ExtResource( 17 )
+
+[node name="history" type="AudioStreamPlayer" parent="."]
 
 [connection signal="pressed" from="polaroid3/half1_1" to="." method="_on_half1_1_pressed"]
 [connection signal="pressed" from="polaroid3/half1_2" to="." method="_on_half1_2_pressed"]

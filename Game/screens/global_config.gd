@@ -13,6 +13,7 @@ var music = true
 #Caso easymode = 1, Modo de jogo fácil está ativado
 #Caso easymode = 0, Modo de jogo difícil está ativado
 var easymode
+signal musicChanged
 
 
 #Storychosen = 1: 3 porquinhos - level 0 ao 13
@@ -67,12 +68,14 @@ func load_game():
 func music_on():
 	music = true
 	background_sound.play()
+	emit_signal("musicChanged")
 
 
 #Desliga a música do jogo
 func music_off():
 	music = false
 	background_sound.stop()
+	emit_signal("musicChanged")
 
 
 #Função que seta as configurações da música que deve ser tocada na abertura do jogo

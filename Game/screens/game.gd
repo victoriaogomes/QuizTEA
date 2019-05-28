@@ -14,8 +14,6 @@ var button2_2 = 0
 var question1 = preload("res://sprites/texts/gameQuestion.png")
 var question2 = preload("res://sprites/texts/gameQuestion2.png")
 
-var history = AudioStreamPlayer.new()
-
 var scenesTimes = [
 [0, 8.944, 20.581312, 24.906647, 29.087978, 36.27198, 46.863979, 50.954647, 55.301311, 64.826645, 75.813309, 81.461311, 89.034645, 94.287979],
 [0, 13.68, 21.6, 29.754667, 39.509335, 52.010666, 58.080002, 67.418663, 74.410667, 78.346649, 81.786644, 86.362648, 90.826645, 96.245316, 104.559982],
@@ -24,19 +22,19 @@ var scenesTimes = [
 
 
 func _ready():
+	global_config.connect("musicChanged", self, "changeBackSound")
 	if(global_config.easymode == 1):
 		$ColorRect.set_visible(true)
 		$ColorRect/ouvirTrecho.set_block_signals(false)
 	else:
 		$ColorRect.set_visible(false)
 		$ColorRect/ouvirTrecho.set_block_signals(true)
-	self.add_child(history)
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
 	match(global_config.storychosen):
 		1:
 			$Popup/title.set_text("Os três porquinhos")
-			history.stream = load("res://sound/3porquinhos.ogg")
+			$history.stream = load("res://sound/3porquinhos.ogg")
 			vector = [preload("res://sprites/images/3Porquinhos/Parte1.jpg"), preload("res://sprites/images/3Porquinhos/Parte2.jpg"),
 			preload("res://sprites/images/3Porquinhos/Parte3.jpg"), preload("res://sprites/images/3Porquinhos/Parte4.jpg"),
 			preload("res://sprites/images/3Porquinhos/Parte5.jpg"), preload("res://sprites/images/3Porquinhos/Parte6.jpg"),
@@ -46,7 +44,7 @@ func _ready():
 			preload("res://sprites/images/3Porquinhos/Parte13.jpg"), preload("res://sprites/images/3Porquinhos/Parte14.jpg")]
 		2:
 			$Popup/title.set_text("Chapeuzinho Vermelho")
-			history.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
+			$history.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
 			vector = [preload("res://sprites/images/ChapeuzinhoVermelho/Parte1.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte2.jpg"),
 			preload("res://sprites/images/ChapeuzinhoVermelho/Parte3.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte4.jpg"),
 			preload("res://sprites/images/ChapeuzinhoVermelho/Parte5.jpg"), preload("res://sprites/images/ChapeuzinhoVermelho/Parte6.jpg"),
@@ -57,7 +55,7 @@ func _ready():
 			preload("res://sprites/images/ChapeuzinhoVermelho/Parte15.jpg")]
 		3:
 			$Popup/title.set_text("A pequena Sereia")
-			history.stream = load("res://sound/PequenaSereia.ogg")
+			$history.stream = load("res://sound/PequenaSereia.ogg")
 			vector = [preload("res://sprites/images/PequenaSereia/Parte1.jpg"), preload("res://sprites/images/PequenaSereia/Parte2.jpg"),
 			preload("res://sprites/images/PequenaSereia/Parte3.jpg"), preload("res://sprites/images/PequenaSereia/Parte4.jpg"),
 			preload("res://sprites/images/PequenaSereia/Parte5.jpg"), preload("res://sprites/images/PequenaSereia/Parte6.jpg"),
@@ -67,15 +65,46 @@ func _ready():
 	_set_options()
 	$text.set_texture(question1)
 
+func changeBackSound():
+	var position
+	var isPlaying
+	position = $history.get_playback_position()
+	isPlaying = $history.is_playing()
+	match(global_config.storychosen):
+		1:
+			if(global_config.music == true):
+				$history.stream = load("res://sound/3porquinhos.ogg")
+			else:
+				$history.stream = load("res://sound/3porquinhos_01.ogg")
+		2:
+			if(global_config.music == true):
+				$history.stream = load("res://sound/ChapeuzinhoVermelho.ogg")
+			else:
+				$history.stream = load("res://sound/ChapeuzinhoVermelho_01.ogg")
+		3:
+			if(global_config.music == true):
+				$history.stream = load("res://sound/PequenaSereia.ogg")
+			else:
+				$history.stream = load("res://sound/PequenaSereia_01.ogg")
+	if(isPlaying):
+		$history.play(position)
+		global_config.background_sound.stop()
+	else:
+		$history.seek(position)
+
 #warning-ignore:unused_argument
 func _process(delta):
-	if(history.get_playback_position()>=scenesTimes[global_config.storychosen-1][global_config.level+1]):
-		history.stop()
+	if($history.get_playback_position()>=scenesTimes[global_config.storychosen-1][global_config.level+1]):
+		$history.stop()
 		if(global_config.music == true):
 			global_config.music_on()
 		set_process(false)
 
 func next():
+	if($history.is_playing()):
+		$history.stop()
+		if(global_config.music == true):
+			global_config.music_on()
 	if(givenAnswer == correctAnswer):
 		global_config.increment_level()
 		if(global_config.level > 0):
@@ -216,6 +245,8 @@ func _verifyButtonsOption1():
 
 
 func _on_pause_pressed():
+	if($history.is_playing()):
+		$history.stop()
 	$polaroid3/half1_1.set_block_signals(true)
 	$polaroid3/half1_2.set_block_signals(true)
 	$polaroid3_2/half2_1.set_block_signals(true)
@@ -233,4 +264,4 @@ func _on_pause_pressed():
 func _on_ouvirTrecho_pressed():
 	set_process(true)
 	global_config.background_sound.stop()
-	history.play(scenesTimes[global_config.storychosen-1][global_config.level])
+	$history.play(scenesTimes[global_config.storychosen-1][global_config.level])
