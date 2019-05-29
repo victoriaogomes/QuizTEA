@@ -17,11 +17,11 @@ var question2 = preload("res://sprites/texts/gameQuestion2.png")
 var scenesTimes = [
 [0, 8.944, 20.581312, 24.906647, 29.087978, 36.27198, 46.863979, 50.954647, 55.301311, 64.826645, 75.813309, 81.461311, 89.034645, 94.287979],
 [0, 13.68, 21.6, 29.754667, 39.509335, 52.010666, 58.080002, 67.418663, 74.410667, 78.346649, 81.786644, 86.362648, 90.826645, 96.245316, 104.559982],
-[0, 6.133333, 10.362667, 23.440001, 30.154667, 40.469334, 43.674667, 50.762665, 56.015999, 66.842667, 76.767998, 89.984001]
-]
+[0, 6.133333, 10.362667, 23.440001, 30.154667, 40.469334, 43.674667, 50.762665, 56.015999, 66.842667, 76.767998, 89.984001]]
 
 
 func _ready():
+#warning-ignore:return_value_discarded
 	global_config.connect("musicChanged", self, "changeBackSound")
 	if(global_config.easymode == 1):
 		$ColorRect.set_visible(true)
@@ -64,6 +64,24 @@ func _ready():
 			preload("res://sprites/images/PequenaSereia/Parte11.jpg"), preload("res://sprites/images/PequenaSereia/Parte12.jpg")]
 	_set_options()
 	$text.set_texture(question1)
+	if(global_config.played_once == 0):
+		$ColorRect2.set_visible(true)
+		$ColorRect2/Label.set_text("Olá, bem vindo(a)! Como é sua primeira vez aqui, vou te \n ensinar como tudo funciona.")
+		$AnimationPlayer.play("tip2", -1, 1.0, false)
+		yield(get_tree().create_timer(4), "timeout")
+		if(global_config.easymode == 0):
+			$ColorRect2/Label.set_text("Para dar zoom, dê um clique na polaroid. Vamos lá, tente!")
+			$AnimationPlayer.play("tip", -1, 1.0, false)
+			yield($AnimationPlayer, "animation_finished")
+			$outerClick.set_visible(true)
+			$innerClick.set_visible(true)
+			$click.set_visible(true)
+			$AnimationPlayer.play("zoomClick2", -1, 1.0, false)
+		else:
+			$ColorRect2/Label.set_text("Primeiro, clique em Ouvir Trecho, para ouvir o \n início da história")
+			$AnimationPlayer.play("tip2", -1, 1.0, false)
+			yield($AnimationPlayer, "animation_finished")
+
 
 func changeBackSound():
 	var position
@@ -92,19 +110,30 @@ func changeBackSound():
 	else:
 		$history.seek(position)
 
+
 #warning-ignore:unused_argument
 func _process(delta):
 	if($history.get_playback_position()>=scenesTimes[global_config.storychosen-1][global_config.level+1]):
-		$history.stop()
+		if($history.is_playing()):
+			$history.stop()
 		if(global_config.music == true):
-			global_config.music_on()
+			global_config.background_sound.play()
+		if(global_config.played_once == 0):
+			$ColorRect2/Label.set_text("Para dar zoom, dê um clique na polaroid. Vamos lá, tente!")
+			$AnimationPlayer.play("tip", -1, 1.0, false)
+			yield($AnimationPlayer, "animation_finished")
+			$outerClick.set_visible(true)
+			$innerClick.set_visible(true)
+			$click.set_visible(true)
+			$AnimationPlayer.play("zoomClick2", -1, 1.0, false)
 		set_process(false)
+
 
 func next():
 	if($history.is_playing()):
 		$history.stop()
 		if(global_config.music == true):
-			global_config.music_on()
+			global_config.background_sound.play()
 	if(givenAnswer == correctAnswer):
 		global_config.increment_level()
 		if(global_config.level > 0):
@@ -137,6 +166,14 @@ func next():
 		$wrongAnswer/opt2/keepPlaying.set_block_signals(false)
 		get_node("/root/Node2D/wrongAnswer/AnimationPlayer").play("openUp", -1, 1.0, false)
 		yield(get_node("/root/Node2D/wrongAnswer/AnimationPlayer"), "animation_finished")
+	if(global_config.played_once == 0):
+		$AnimationPlayer.stop()
+		$click.set_visible(false)
+		global_config.played_once=1
+		$ColorRect2/Label.set_text("Agora você está pronto para continuar a brincar sozinho. \n Boa sorte!")
+		yield(get_tree().create_timer(3), "timeout")
+		$AnimationPlayer.play_backwards("tip", -1)
+		yield($AnimationPlayer, "animation_finished")
 
 
 func _set_options():
@@ -145,23 +182,34 @@ func _set_options():
 	#Storychosen = 2: A pequena sereia - level 0 ao 11
 	var valores_sorteio1 = [12,13,10]
 	var valores_sorteio2 = [13,14,11]
-	correctAnswer = randi()%2
-	givenAnswer = 3
 	if(global_config.level<valores_sorteio1[global_config.storychosen-1]):
 		# Sortear um número entre (level+2) e 13:
 		pos = (randi()%(valores_sorteio2[global_config.storychosen-1]-(global_config.level+1))) + (global_config.level+1)
 	else:
 		pos = randi()%valores_sorteio1[global_config.storychosen-1]
-	match(correctAnswer):
-		0: 
-			$polaroid3/polaroid1.set_texture(vector[global_config.level])
-			$polaroid3_2/polaroid1.set_texture(vector[pos])
-		1:
-			$polaroid3/polaroid1.set_texture(vector[pos])
-			$polaroid3_2/polaroid1.set_texture(vector[global_config.level])
+	givenAnswer = 3
+	if(global_config.played_once == 1):
+		correctAnswer = randi()%2
+		match(correctAnswer):
+			0: 
+				$polaroid3/polaroid1.set_texture(vector[global_config.level])
+				$polaroid3_2/polaroid1.set_texture(vector[pos])
+			1:
+				$polaroid3/polaroid1.set_texture(vector[pos])
+				$polaroid3_2/polaroid1.set_texture(vector[global_config.level])
+	else:
+		correctAnswer = 1
+		$polaroid3/polaroid1.set_texture(vector[pos])
+		$polaroid3_2/polaroid1.set_texture(vector[global_config.level])
 
 
 func _zoomScreenAnimation(var type):
+	if(global_config.played_once == 0):
+		$AnimationPlayer.stop()
+		$outerClick.set_visible(false)
+		$innerClick.set_visible(false)
+		$click.set_visible(false)
+		$ColorRect2/Label.set_text("Para fechar, clique no X acima")
 	#Faz com que não seja possível clicar nos botões:
 	$polaroid3/half1_1.set_block_signals(true)
 	$polaroid3/half1_2.set_block_signals(true)
@@ -247,6 +295,11 @@ func _verifyButtonsOption1():
 func _on_pause_pressed():
 	if($history.is_playing()):
 		$history.stop()
+	if(global_config.played_once == 0):
+		$innerClick.set_visible(false)
+		$outerClick.set_visible(false)
+		$click.set_visible(false)
+		$ColorRect2.set_visible(false)
 	$polaroid3/half1_1.set_block_signals(true)
 	$polaroid3/half1_2.set_block_signals(true)
 	$polaroid3_2/half2_1.set_block_signals(true)
@@ -261,7 +314,8 @@ func _on_pause_pressed():
 	$pauseScreen/AnimationPlayer.play_backwards("Pausemenu", -1)
 	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")
 
+
 func _on_ouvirTrecho_pressed():
-	set_process(true)
 	global_config.background_sound.stop()
 	$history.play(scenesTimes[global_config.storychosen-1][global_config.level])
+	set_process(true)

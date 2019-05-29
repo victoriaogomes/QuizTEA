@@ -3,18 +3,18 @@ extends Node2D
 var instructionNumber = 0
 var textos = ["- Ao escolher Jogar, você será levado a essa tela.",
 "- No lado direito, você possui 3 opções de história para jogar. \n Escolha uma.",
-"- Após escolher uma história, você virá para essa tela.",
-"- Você deverá ouvir a história escolhida no mínimo \n uma vez.",
+"- Após escolher uma história, você virá para essa tela. \n Escolha então o seu modo de jogo.",
+"- Caso escolha o Modo difícil, você deverá ouvir a história \n escolhida no mínimo uma vez.",
 "- Após ouvi-la, deverá clicar em Iniciar Jogo.",
-"- Essa é sua tela de jogo.", 
+"- Caso escolha o Modo Fácil, você virá direto para a \n tela de jogo.", 
 "- Caso queira visualizar uma polaroid mais de perto, clique \n uma vez nela.",
 "- Caso deseje selecionar uma resposta, deslize para baixo, \n como mostrado na imagem.",
 "- Caso você erre a resposta, será sugerido que você ouça a \n história novamente a partir do trecho onde se encontra.",
 "- Quando terminar o jogo, você será levado para essa tela, \n onde poderá escolher jogar novamente ou voltar ao menu."]
 
 var images = [preload("res://sprites/images/EscolherHist.png"),
-preload("res://sprites/images/opcoesHist.png"), 
-preload("res://sprites/images/OuvirHis.png"),
+preload("res://sprites/images/opcoesHist.png"),
+preload("res://sprites/images/ModoJogo.png"),
 preload("res://sprites/images/playingHist.png"),
 preload("res://sprites/images/iniciarJogo.png"),
 preload("res://sprites/images/TelaJogo.png"),

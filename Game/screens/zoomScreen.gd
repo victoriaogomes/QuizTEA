@@ -19,3 +19,7 @@ func _on_close_pressed():
 	get_node("/root/Node2D/polaroid3_2/half2_2").set_block_signals(false)
 	get_node("/root/Node2D/optionsAnimation").set_visible(false)
 	get_node("/root/Node2D/pause").set_block_signals(false)
+	if(global_config.played_once == 0):
+		get_node("/root/Node2D/ColorRect2/Label").set_text("Para fornecer uma resposta, deslize para baixo. Tente!")
+		get_node("/root/Node2D/click").set_visible(true)
+		get_node("/root/Node2D/AnimationPlayer").play("slide", -1, 1.0, false)

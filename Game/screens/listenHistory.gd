@@ -40,12 +40,8 @@ func _on_iniciarJogo_pressed():
 		if(global_config.music==true):
 			if(global_config.background_sound.is_playing() == false):
 				global_config.music_on()
-		if(global_config.played_once == 0):
-			global_config.comeFrom_listenHistory = 1
-			$Popup2.popup()
-		else:
-			#warning-ignore:return_value_discarded
-			get_tree().change_scene_to(next_scene)
+		#warning-ignore:return_value_discarded
+		get_tree().change_scene_to(next_scene)
 	else:
 		$Popup.popup()
 		$Popup/ok.set_block_signals(false)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://screens/game.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
@@ -17,6 +17,11 @@
 [ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=15]
 [ext_resource path="res://sprites/texts/OuvirTrecho.png" type="Texture" id=16]
 [ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=17]
+[ext_resource path="res://screens/slide.tres" type="Animation" id=18]
+[ext_resource path="res://screens/zoomClick2.tres" type="Animation" id=19]
+[ext_resource path="res://sprites/images/innerCircle.png" type="Texture" id=20]
+[ext_resource path="res://sprites/images/click.png" type="Texture" id=21]
+[ext_resource path="res://sprites/images/outerCircle.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 size = 20
@@ -24,6 +29,112 @@ font_data = ExtResource( 13 )
 
 [sub_resource type="DynamicFont" id=2]
 size = 30
+font_data = ExtResource( 13 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "tip"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -311, 121.758 ), Vector2( -311, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect2/Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 155.084, 11.6313 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect2/Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "tip2"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -311, -570.951 ), Vector2( -311, -479.193 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2/Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 155.084, 11.6313 ), Vector2( 155.084, 11.6313 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect2/Label:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
 font_data = ExtResource( 13 )
 
 [node name="Node2D" type="Node2D"]
@@ -334,6 +445,49 @@ scale = Vector2( 0.215451, 0.215451 )
 texture = ExtResource( 17 )
 
 [node name="history" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/slide = ExtResource( 18 )
+anims/tip = SubResource( 3 )
+anims/tip2 = SubResource( 4 )
+anims/zoomClick2 = ExtResource( 19 )
+
+[node name="innerClick" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 441.525, -198.479 )
+scale = Vector2( 0.225, 0.225 )
+texture = ExtResource( 20 )
+
+[node name="click" type="Sprite" parent="."]
+visible = false
+position = Vector2( 470.512, -111.111 )
+scale = Vector2( 0.342102, 0.342102 )
+texture = ExtResource( 21 )
+
+[node name="outerClick" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 442.013, -197.991 )
+scale = Vector2( 0.225, 0.225 )
+texture = ExtResource( 22 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_left = -311.0
+margin_top = -479.193
+margin_right = 712.0
+margin_bottom = -388.193
+
+[node name="Label" type="Label" parent="ColorRect2"]
+margin_left = 149.915
+margin_top = 21.9703
+margin_right = 913.915
+margin_bottom = 88.9703
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Para dar zoom, dê um clique na polaroid. Vamos lá, tente!"
+align = 1
 
 [connection signal="pressed" from="polaroid3/half1_1" to="." method="_on_half1_1_pressed"]
 [connection signal="pressed" from="polaroid3/half1_2" to="." method="_on_half1_2_pressed"]

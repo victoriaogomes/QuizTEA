@@ -48,6 +48,12 @@ func _on_close_pressed():
 	get_node("/root/Node2D/pause").set_block_signals(false)
 	get_node("/root/Node2D/ColorRect").set_visible(true)
 	get_node("/root/Node2D/ColorRect/ouvirTrecho").set_block_signals(false)
+	if(global_config.played_once == 0):
+		get_node("/root/Node2D/ColorRect2").set_visible(true)
+		get_node("/root/Node2D/click").set_visible(true)
+		if(get_node("/root/Node2D/ColorRect2/Label").get_text()=="Para dar zoom, dê um clique na polaroid. Vamos lá, tente!"):
+			get_node("/root/Node2D/innerClick").set_visible(true)
+			get_node("/root/Node2D/outerClick").set_visible(true)
 
 
 func _on_musicButton_pressed():
