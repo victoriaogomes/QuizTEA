@@ -94,7 +94,7 @@ func _on_pause_pressed():
 	pos = self.get_playback_position()
 	self.stop()
 	if(global_config.music == true):
-		global_config.music_on()
+		global_config.background_sound.play()
 	$Timer.stop()
 
 
@@ -116,7 +116,7 @@ func on_TimeOut():
 func audioFinished():
 	listened_once = 1
 	if(global_config.music==true):
-		global_config.music_on()
+		global_config.background_sound.play()
 	$Timer.stop()
 	$play.set_texture(play_asset)
 
