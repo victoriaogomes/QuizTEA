@@ -21,7 +21,6 @@
 [ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=19]
 [ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=20]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "creditScreen"
 length = 2.0

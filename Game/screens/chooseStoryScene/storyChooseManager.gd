@@ -1,8 +1,8 @@
 extends Node2D
 
-var next_scene = preload("res://screens/listenHistory.tscn")
-var game_scene = preload("res://screens/game.tscn")
-var previous_scene = load("res://screens/titleScreen.tscn")
+var next_scene = preload("res://screens/listenStoryScene/listenHistory.tscn")
+var game_scene = preload("res://screens/gameScene/game.tscn")
+var previous_scene = load("res://screens/titleScreen/titleScreen.tscn")
 var musicOff = preload("res://sprites/images/soundOff.png")
 var musicOn = preload("res://sprites/images/soundOn.png")
 

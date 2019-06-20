@@ -20,8 +20,6 @@
 [ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=18]
 [ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=19]
 
-
-
 [sub_resource type="DynamicFont" id=1]
 size = 26
 outline_color = Color( 0, 0, 0, 1 )

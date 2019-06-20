@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="QuizTEA"
-run/main_scene="res://screens/titleScreen.tscn"
+run/main_scene="res://screens/titleScreen/titleScreen.tscn"
 config/icon="res://sprites/images/kidReading.png"
 
 [autoload]

@@ -18,7 +18,6 @@
 [ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=16]
 [ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=17]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "transition"
 length = 2.0

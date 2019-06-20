@@ -1,8 +1,8 @@
 extends Node2D
 
-var next_scene = preload("res://screens/game.tscn")
-var previous_scene = load("res://screens/storyChoose.tscn")
-var instruction_scene = load("res://screens/instructions.tscn")
+var next_scene = preload("res://screens/gameScene/game.tscn")
+var previous_scene = load("res://screens/chooseStoryScene/storyChoose.tscn")
+var instruction_scene = load("res://screens/instructions/instructions.tscn")
 
 var titles = [preload("res://sprites/texts/porquinhos.png"), 
 preload("res://sprites/texts/chapeuzinho.png"), 

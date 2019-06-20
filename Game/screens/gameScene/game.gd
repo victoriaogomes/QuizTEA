@@ -4,7 +4,7 @@ var vector
 var correctAnswer
 var givenAnswer = 3
 var pos
-var win_scene = preload("res://screens/winScreen.tscn")
+var win_scene = preload("res://screens/winScene/winScreen.tscn")
 #Essas variáveis armazenam o valor "1" caso estejam pressionados e "0" caso não estejam pressionados
 var button1_1 = 0
 var button1_2 = 0

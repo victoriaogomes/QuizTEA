@@ -35,8 +35,8 @@ Vector2(0.709,0.709),
 Vector2(0.709,0.709),
 Vector2(0.709,0.709)]
 
-var titleScreen = preload("res://screens/titleScreen.tscn")
-var game_scene = preload("res://screens/game.tscn")
+var titleScreen = preload("res://screens/titleScreen/titleScreen.tscn")
+var game_scene = preload("res://screens/gameScene/game.tscn")
 
 var musicOff = preload("res://sprites/images/soundOff.png")
 var musicOn = preload("res://sprites/images/soundOn.png")

@@ -1,7 +1,7 @@
 extends Node2D
 
-var initial_scene = load("res://screens/titleScreen.tscn")
-var game_scene = load("res://screens/game.tscn")
+var initial_scene = load("res://screens/titleScreen/titleScreen.tscn")
+var game_scene = load("res://screens/gameScene/game.tscn")
 
 var musicOff = preload("res://sprites/images/soundOff.png")
 var musicOn = preload("res://sprites/images/soundOn.png")
